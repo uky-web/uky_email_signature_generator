@@ -1,0 +1,7 @@
+name = UK Email Signature Generator
+description = A custom page that includes a client-side html email signature generator.
+core = 7.x
+php = 5
+
+
+files[] = uky_email_signature.module
