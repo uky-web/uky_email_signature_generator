@@ -5,3 +5,11 @@ uky_email_signature_generator.generator_form:
     _title: 'Email Signature Generator'
   requirements:
     _permission: 'access email signature generator page'
+
+uky_email_signature_generator.settings_form:
+  path: '/admin/config/content/uky_email_signature_generator'
+  defaults:
+    _title: 'Email Signature Generator Settings'
+    _form: '\Drupal\uky_email_signature_generator\Form\SettingsForm'
+  requirements:
+    _permission: 'administer uky email signature generator'
