@@ -1,0 +1,4 @@
+access email signature generator page:
+  title: 'Access email signature generator'
+  description: 'Allow users to access the email signature generator page'
+  restrict access: false

@@ -1,0 +1,7 @@
+uky_email_signature_generator.generator_form:
+  path: '/branding-tools/email-signature-generator'
+  defaults:
+    _controller: '\Drupal\uky_email_signature_generator\Controller\GeneratorFormController::page'
+    _title: 'Email Signature Generator'
+  requirements:
+    _permission: 'access email signature generator page'

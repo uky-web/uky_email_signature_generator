@@ -2,35 +2,37 @@
 
 function uky_email_signature_generator_init() {
 
-  drupal_add_js(
-    array(
-      'uky_email_signature' => array(
-        'modulePath' => drupal_get_path(
-          'module',
-          'uky_email_signature'
-        )
-      )
-    ),
-    'setting'
-  );
+//  drupal_add_js(
+//    array(
+//      'uky_email_signature' => array(
+//        'modulePath' => drupal_get_path(
+//          'module',
+//          'uky_email_signature'
+//        )
+//      )
+//    ),
+//    'setting'
+//  );
 
+  var_dump(current_path());
+  die();
 
   //HEAD
   //    print current_path();
   if (current_path() == 'branding-tools/email-signature-generator'){
-    $modulePath = drupal_get_path('module', 'uky_email_signature');
-    drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js', 'external');
-    drupal_add_js($modulePath.'/assets/js/vendor/clipboard.js');
-    drupal_add_js($modulePath.'/assets/js/vendor/chosen/chosen.jquery.min.js');
-
-    drupal_add_css($modulePath.'/assets/js/vendor/chosen/chosen.min.css');
-    drupal_add_css($modulePath.'/semantic/dist/semantic.min.css');
-    drupal_add_css($modulePath.'/assets/css/homepage.css');
-
-    //footer
-    drupal_add_js($modulePath.'/semantic/dist/semantic.min.js', array('scope' => 'footer'));
-    drupal_add_js($modulePath.'/assets/js/main.js', array('scope' => 'footer'));
-    drupal_add_js($modulePath.'/assets/js/variables.js', array('scope' => 'footer'));
+//    $modulePath = drupal_get_path('module', 'uky_email_signature');
+//    drupal_add_js('//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js', 'external');
+//    drupal_add_js($modulePath.'/assets/js/vendor/clipboard.js');
+//    drupal_add_js($modulePath.'/assets/js/vendor/chosen/chosen.jquery.min.js');
+//
+//    drupal_add_css($modulePath.'/assets/js/vendor/chosen/chosen.min.css');
+//    drupal_add_css($modulePath.'/semantic/dist/semantic.min.css');
+//    drupal_add_css($modulePath.'/assets/css/homepage.css');
+//
+//    //footer
+//    drupal_add_js($modulePath.'/semantic/dist/semantic.min.js', array('scope' => 'footer'));
+//    drupal_add_js($modulePath.'/assets/js/main.js', array('scope' => 'footer'));
+//    drupal_add_js($modulePath.'/assets/js/variables.js', array('scope' => 'footer'));
   };
 }
 
@@ -131,7 +133,7 @@ function uky_email_signature_generator_system_info_alter(&$info, $file, $type){
   //    }
 
   if ($type == 'theme') {
-    $info['regions']['email_instructions'] = t('Email Instructions');
+//    $info['regions']['email_instructions'] = t('Email Instructions');
   }
 
 }
