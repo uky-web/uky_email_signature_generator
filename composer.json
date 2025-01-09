@@ -1,0 +1,26 @@
+{
+    "name": "uky-web/uky_email_signature_generator",
+    "description": "A custom page that includes a client-side html email signature generator.",
+    "type": "drupal-module",
+    "require": {
+        "harvesthq/chosen": "^1.8",
+        "zenorocha/clipboardjs": "^2.0"
+    },
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "UkyWeb\\UkyEmailSignatureGenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "University of Kentucky"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
+        }
+    }
+}
