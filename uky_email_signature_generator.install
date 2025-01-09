@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for the Lorem ipsum module.
+ */
+
+use Drupal\user\RoleInterface;
+
+/**
+ * Implements hook_install().
+ */
+function uky_email_signature_generator_install() {
+  user_role_change_permissions(RoleInterface::ANONYMOUS_ID, [
+    'access email signature generator page' => TRUE,
+  ]);
+}
