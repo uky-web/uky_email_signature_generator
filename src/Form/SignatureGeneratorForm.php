@@ -35,10 +35,34 @@ class SignatureGeneratorForm extends FormBase {
       '#required' => TRUE,
     ];
 
+    $pronouns = [
+      'nom' => [
+        'she',
+        'he',
+        'they',
+      ],
+      'obj' => [
+        'her',
+        'him',
+        'them',
+      ],
+      'pos' => [
+        'hers',
+        'his',
+        'theirs',
+      ],
+    ];
+
+    $pronoun_placeholder = implode('/', [
+      array_rand(array_flip($pronouns['nom'])),
+      array_rand(array_flip($pronouns['obj'])),
+      array_rand(array_flip($pronouns['pos']))
+    ]);
+
     $form['pronouns'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Pronouns'),
-      '#placeholder' => $this->t('she/her, he/him, they/them, etc.'),
+      '#placeholder' => $this->t($pronoun_placeholder . ' etc.'),
     ];
 
     $form['credentials'] = [
@@ -87,7 +111,6 @@ class SignatureGeneratorForm extends FormBase {
       '#type' => 'email',
       '#title' => $this->t('Email'),
       '#placeholder' => $this->t('john.smith@example.com'),
-      '#required' => TRUE,
     ];
 
     $form['submit'] = [

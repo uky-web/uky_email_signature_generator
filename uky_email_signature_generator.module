@@ -1,4 +1,18 @@
 <?php
+/**
+ * Implements hook_theme().
+ */
+function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
+  return [
+    'uky_email_signature_generator_form' => [
+      'template' => 'email-signature-generator-page',
+      'path' => $path . '/templates',
+      'variables' => [
+        'form' => NULL
+      ],
+    ],
+  ];
+}
 
 function uky_email_signature_generator_init() {
 

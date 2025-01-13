@@ -28,6 +28,12 @@ class GeneratorFormController extends ControllerBase {
     $this->formBuilder = $form_builder;
   }
 
+  public static function create(ContainerInterface $container): GeneratorFormController|static {
+    return new static(
+      $container->get('form_builder')
+    );
+  }
+
   /**
    * Returns a simple page.
    *
@@ -36,6 +42,9 @@ class GeneratorFormController extends ControllerBase {
    */
   public function page(): array {
     // Render the form.
-    return $this->formBuilder->getForm(SignatureGeneratorForm::class);
+    return [
+      '#theme' => 'uky_email_signature_generator_form',
+      '#form' => $this->formBuilder->getForm(SignatureGeneratorForm::class),
+    ];
   }
 }
