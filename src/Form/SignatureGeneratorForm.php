@@ -113,11 +113,6 @@ class SignatureGeneratorForm extends FormBase {
       '#placeholder' => $this->t('john.smith@example.com'),
     ];
 
-    $form['submit'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Generate Signature'),
-    ];
-
     return $form;
   }
 

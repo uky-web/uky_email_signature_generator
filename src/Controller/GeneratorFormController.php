@@ -45,6 +45,14 @@ class GeneratorFormController extends ControllerBase {
     return [
       '#theme' => 'uky_email_signature_generator_form',
       '#form' => $this->formBuilder->getForm(SignatureGeneratorForm::class),
+      '#attached' => [
+        'library' => [
+          'uky_email_signature_generator/semantic-ui',
+          'uky_email_signature_generator/clipboard-js',
+          'uky_email_signature_generator/chosen',
+          'uky_email_signature_generator/signature-generator-custom',
+        ]
+      ]
     ];
   }
 }

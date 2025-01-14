@@ -34,13 +34,13 @@
 						<!-- Name and Credentials -->
 						<tr>
 							<td class="inner-td font">
-								<span class="name-span">${first} ${last}</span><span id="creds" class="cred-span">${creds}</span>
+								<span class="name-span">{{ name }}</span><span id="creds" class="cred-span">{{ creds }}</span>
 							</td>
 						</tr>
 						<!-- Title/Position -->
 						<tr id="title">
 							<td class="inner-td font">
-								<span class="position-span">${title}</span>
+								<span class="position-span">{{ title }}</span>
 							</td>
 						</tr>
 						<!-- Division -->
@@ -52,37 +52,37 @@
 						<!-- Division -->
 						<tr id="department">
 							<td class="inner-td font">
-								<span class="position-span">${department}</span>
+								<span class="position-span">{{ department }}</span>
 							</td>
 						</tr>
 						<!-- Address -->
 						<tr id="address">
 							<td class="inner-td font">
-								<span class="position-span">${address}</span>
+								<span class="position-span">{{ address }}</span>
 							</td>
 						</tr>
 						<!-- City -->
 						<tr id="city">
 							<td class="inner-td font">
-								<span class="position-span">${city}</span>
+								<span class="position-span">{{ city }}</span>
 							</td>
 						</tr>
 						<!-- Phone Number -->
 						<tr class="color-tr" id="phone">
 							<td class="inner-td">
-								<a href="tel:${phone}" target="_blank" class="no-dec"><span class="phone-number">${phone}</span></a>
+								<a href="tel:{{ phone }}" target="_blank" class="no-dec"><span class="phone-number">{{ phone }}</span></a>
 							</td>
 						</tr>
 						<!-- Email -->
 						<tr class="color-tr" id="email">
 							<td class="inner-td">
-								<a href="mailto:${email}" target="_blank" class="no-dec web-link"></a>${email}</a>
+								<a href="mailto:{{ email }}" target="_blank" class="no-dec web-link"></a>{{ email }}</a>
 							</td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 		</table>
-		
+
 	</div>
 </body>

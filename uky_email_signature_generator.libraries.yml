@@ -1,0 +1,33 @@
+signature-generator-custom:
+  css:
+    layout:
+      css/legacy.css: {}
+  js:
+    js/main.js: {}
+    js/variables.js: {}
+  dependencies:
+    - core/jquery
+
+semantic-ui:
+  css:
+    layout:
+      vendor/semantic/ui/dist/semantic.min.css: {}
+  js:
+    vendor/semantic/ui/dist/semantic.min.js: {}
+  dependencies:
+    - core/jquery
+
+clipboard-js:
+  js:
+    vendor/zenorocha/clipboardjs/dist/clipboard.min.js: {}
+  dependencies:
+    - core/jquery
+
+chosen:
+  css:
+    layout:
+      vendor/harvesthq/chosen/chosen.min.css: {}
+  js:
+    vendor/harvesthq/chosen/chosen.jquery.min.js: {}
+  dependencies:
+    - core/jquery
