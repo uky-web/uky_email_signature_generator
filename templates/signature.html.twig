@@ -23,71 +23,92 @@
 </head>
 <body>
 <div>
-  <table width="320" id="sig" cellspacing="0" cellpadding="0" border-spacing="0">
-    <tr>
-      <td width="110" class="top-td logo-td1">
-        <img id="top-logo"  border="0" width="100" height="71" src="https://uknow.uky.edu/sites/default/files/UK-logo.png">
-      </td>
-      <!-- Right Side Info -->
-      <td valign="top" class="right-top-td">
-        <table id="sig2" cellspacing="0" cellpadding="0" border-spacing="0" class="right-table">
-          <!-- Name and Credentials -->
-          <tr>
-            <td class="inner-td font">
-              <span class="name-span">{{ data.name }}</span><span id="creds" class="cred-span">{{ data.creds }}</span>
-            </td>
-          </tr>
-          <!-- Pronouns -->
-          <tr id="pronouns">
-            <td class="inner-td font">
-              <span class="pronouns-span">{{ data.pronouns }}</span>
-            </td>
-          </tr>
-          <!-- Title/Position -->
-          <tr id="title">
-            <td class="inner-td font">
-              <span class="position-span">{{ data.title }}</span>
-            </td>
-          </tr>
-          <!-- Division -->
-          <tr id="org">
-            <td class="inner-td font">
-              <span class="position-span">University of Kentucky</span>
-            </td>
-          </tr>
-          <!-- Division -->
-          <tr id="department">
-            <td class="inner-td font">
-              <span class="position-span">{{ data.department }}</span>
-            </td>
-          </tr>
-          <!-- Address -->
-          <tr id="address">
-            <td class="inner-td font">
-              <span class="position-span">{{ data.address }}</span>
-            </td>
-          </tr>
-          <!-- City -->
-          <tr id="city">
-            <td class="inner-td font">
-              <span class="position-span">{{ data.city }}</span>
-            </td>
-          </tr>
-          <!-- Phone Number -->
-          <tr class="color-tr" id="phone">
-            <td class="inner-td">
-              <a href="tel:{{ data.phone }}" target="_blank" class="no-dec"><span class="phone-number">{{ data.phone }}</span></a>
-            </td>
-          </tr>
-          <!-- Email -->
-          <tr class="color-tr" id="email">
-            <td class="inner-td">
-              <a href="mailto:{{ data.email }}" target="_blank" class="no-dec web-link"></a>{{ data.email }}</a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
+  <table width="320" id="sig" cellspacing="0" cellpadding="0" border-spacing="0" style="margin: 0; padding: 0">
+    <tbody>
+      <tr style="margin: 0; padding: 0">
+        <td width="110" class="top-td logo-td1" style="margin: 0; padding-right: 10px; vertical-align: top; width: 100px">
+          <img id="top-logo" border="0" width="100" height="71"
+               src="/{{ path }}/images/UK-logo.png">
+        </td>
+        <td valign="top" class="right-top-td"
+            style="border-left: 1px solid #0033a0; line-height: 1.3em; margin: 0; padding: 0 20px">
+          <table id="sig2" cellspacing="0" cellpadding="0" border-spacing="0" class="right-table" style="-webkit-text-size-adjust: none; border: none; border-collapse: collapse; color: #0033a0; font-family: georgia,times,serif; font-size: 14px; margin: 0; padding: 0; text-decoration: none">
+            <tbody>
+              <tr style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ data.name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (data.creds is not null and data.creds is not empty) ? ', ' ~ data.creds : '' }}</span>
+                </td>
+              </tr>
+              <tr style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span id="pronouns" class="pronoun-span" style="color: #0033a0; font-style: italic">
+                    {{ data.pronouns }}
+                  </span>
+                </td>
+              </tr>
+              <tr id="title" style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="position-span" style="color: #0033a0">
+                    {{ data.title }}
+                  </span>
+                </td>
+              </tr>
+              <tr id="org" style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="position-span" style="color: #0033a0">
+                    University of Kentucky
+                  </span>
+                </td>
+              </tr>
+              <tr id="department" style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="position-span" style="color: #0033a0">
+                    {{ data.department }}
+                  </span>
+                </td>
+              </tr>
+              <tr id="department" style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="position-span" style="color: #0033a0">
+                    {{ data.sub_unit }}
+                  </span>
+                </td>
+              </tr>
+              <tr id="address" style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="position-span" style="color: #0033a0">
+                    {{ data.address }}
+                  </span>
+                </td>
+              </tr>
+              <tr id="city" style="margin: 0; padding: 0">
+                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                  <span class="position-span" style="color: #0033a0">
+                    {{ data.city }}
+                  </span>
+                </td>
+              </tr>
+              <tr class="color-tr" id="phone" style="color: #b0a49b; margin: 0; padding: 0">
+                <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
+                  <a href="tel:{{ data.phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
+                    <span class="phone-number" style="border: none; color: #0033a0; text-decoration: none">
+                      {{ data.phone }}
+                    </span>
+                  </a>
+                </td>
+              </tr>
+              <tr class="color-tr" id="email" style="color: #b0a49b; margin: 0; padding: 0">
+                <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
+                  <a href="mailto:{{ data.email }}" target="_blank" class="no-dec web-link" style="border: none; color: #0033a0; text-decoration: none">
+                    {{ data.email }}
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
 </body>

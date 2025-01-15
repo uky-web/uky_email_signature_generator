@@ -8,15 +8,16 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
       'path' => $path . '/templates',
       'template' => 'email-signature-generator-page',
       'variables' => [
+        'path' => \Drupal::service('extension.list.module')->getPath('uky_email_signature_generator'),
         'form' => NULL,
         'data' => [
           'first_name' => 'John',
           'last_name' => 'Smith',
           'credentials' => 'Ph.D',
-          'pronouns' => '',
+          'pronouns' => 'he/him',
           'position_title' => 'Director',
           'department_unit' => 'Department/Unit',
-          'sub_unit' => 'Sub-Unit/Team',
+          'sub_unit' => '',
           'address' => '123 Main St.',
           'city_state_zip' => 'Lexington, KY 40506',
           'phone' => '859.555.5555',
@@ -28,6 +29,7 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
       'path' => $path . '/templates',
       'template' => 'signature',
       'variables' => [
+        'path' => \Drupal::service('extension.list.module')->getPath('uky_email_signature_generator'),
         'form' => NULL,
         'data' => [
           'first_name' => NULL,
