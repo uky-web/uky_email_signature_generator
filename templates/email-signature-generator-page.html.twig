@@ -2,18 +2,11 @@
 <div class="twelve wide column">
   <div class="ui two column aligned stackable divided grid">
     <div class="column">
-      <!--        <h1>UK Signature Creator</h1>-->
-      <!--        <p>Please input into these fields</p>-->
       <h2>Form</h2>
       <p>Fill out the form below to generate your email signature.</p>
       <div class="ui form left">
         {{ form }}
       </div>
-
-      <button type="button" id="build-button" class="ui uky-button" onclick="buidSignature()">Build My Full Signature</button>
-      <br/>
-      <button type="button" id="build-button" class="ui uky-button" onclick="buidSignature('simplified')">Build My Simple Signature</button>
-      <span>(For email software that doesn't support the full signature)</span>
     </div>
     <div class="column">
       <div id="demo" class="left">
@@ -35,20 +28,26 @@
           }) }}
         </div>
       </div>
-      <div id="directions" class="left" style="display: none;">
+      <div id="directions" class="left">
         <button id="copy-button" class="uky-button copy-btn" type="button"   style="display: none;">
           Copy HTML version to clipboard!
         </button>
         <a id="download-file-button" class="uky-button" type="button" href="#" style="display: none;">Download HTML File</a>
 
-        <?php  $blocks = block_get_blocks_by_region('email_instructions');
-            print render($blocks); ?>
-        <!--<p>Outlook Signature tips:</p>-->
-        <!--<ul>-->
-        <!--  <li><a href="./assets/tutorial/edit-signatures-outlook-2016.png" target="_blank">Outlook 2016 screenshot</a></li>-->
-        <!--  <li><a href="./assets/tutorial/add-file-signature-outlook-2016.mp4" target="_blank">Outlook 2016 video</a></p></li>-->
-        <!--  <li><a href="//youtu.be/0qvJzNeL0tk?t=12s" target="_blank">Outlook 2010 video</a></p></li>-->
-        <!--</ul>-->
+        <div id="email-signature-instructions">
+          <div class="content">
+            <p>
+              <strong>Using your signature</strong>
+              <br />
+              The steps for adding your signature vary depending on your email client. Consult your email client documentation for how to create and edit email signatures.
+              <br /><br />
+              <strong>Note:</strong>
+              <br />
+              - Copy and pasting&nbsp;the email signature is not supported in the&nbsp;<strong>Apple Safari </strong>web browser.
+              <br />
+              - Not all versions of email software support&nbsp;importing HTML signatures.</p>
+          </div>
+        </div>
       </div>
       <br>
     </div>
