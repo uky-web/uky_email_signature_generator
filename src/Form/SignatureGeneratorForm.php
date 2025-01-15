@@ -153,6 +153,7 @@ class SignatureGeneratorForm extends FormBase {
         'creds' => $form_values['credentials'],
         'pronouns' => $form_values['pronouns'],
         'title' => $form_values['position_title'],
+        'university' => 'University of Kentucky',
         'department' => $form_values['department_unit'],
         'sub_unit' => $form_values['sub_unit'],
         'address' => $form_values['address'],
