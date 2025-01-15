@@ -40,93 +40,58 @@ class SignatureGeneratorForm extends FormBase {
     $form['first_name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('First Name'),
-      '#placeholder' => $this->t('John'),
       '#required' => TRUE,
     ];
 
     $form['last_name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Last Name'),
-      '#placeholder' => $this->t('Smith'),
       '#required' => TRUE,
     ];
 
     $form['credentials'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Credentials'),
-      '#placeholder' => $this->t('Ph.D'),
     ];
-
-    $pronouns = [
-      'nom' => [
-        'she',
-        'he',
-        'they',
-      ],
-      'obj' => [
-        'her',
-        'him',
-        'them',
-      ],
-      'pos' => [
-        'hers',
-        'his',
-        'theirs',
-      ],
-    ];
-
-    $pronoun_placeholder = implode('/', [
-      array_rand(array_flip($pronouns['nom'])),
-      array_rand(array_flip($pronouns['obj'])),
-      array_rand(array_flip($pronouns['pos']))
-    ]);
 
     $form['pronouns'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Pronouns'),
-      '#placeholder' => $this->t($pronoun_placeholder . ' etc.'),
     ];
 
     $form['position_title'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Position/Title'),
-      '#placeholder' => $this->t('Director'),
     ];
 
     $form['department_unit'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Department/Unit'),
-      '#placeholder' => $this->t('Department/Unit'),
     ];
 
     $form['sub_unit'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Sub-Unit'),
-      '#placeholder' => $this->t('Sub-Unit/Team'),
     ];
 
     $form['address'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Address'),
-      '#placeholder' => $this->t('123 Main St.'),
     ];
 
     $form['city_state_zip'] = [
       '#type' => 'textfield',
       '#title' => $this->t('City, State ZIP'),
-      '#placeholder' => $this->t('Lexington, KY 40506'),
     ];
 
     $form['phone'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Phone'),
-      '#placeholder' => $this->t('859.555.5555'),
     ];
 
     $form['email'] = [
       '#type' => 'email',
       '#title' => $this->t('Email'),
-      '#placeholder' => $this->t('john.smith@example.com'),
     ];
 
     $form['submit'] = [
