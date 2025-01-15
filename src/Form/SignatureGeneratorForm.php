@@ -2,13 +2,29 @@
 
 namespace Drupal\uky_email_signature_generator\Form;
 
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Renderer;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 
 /**
  * Class SignatureGeneratorForm.
  */
 class SignatureGeneratorForm extends FormBase {
+  protected Renderer $renderer;
+
+  public function __construct(Renderer $renderer) {
+    $this->renderer = $renderer;
+  }
+
+  public static function create(ContainerInterface $container): SignatureGeneratorForm {
+    return new static(
+      $container->get('renderer')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -33,6 +49,12 @@ class SignatureGeneratorForm extends FormBase {
       '#title' => $this->t('Last Name'),
       '#placeholder' => $this->t('Smith'),
       '#required' => TRUE,
+    ];
+
+    $form['credentials'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Credentials'),
+      '#placeholder' => $this->t('Ph.D'),
     ];
 
     $pronouns = [
@@ -63,12 +85,6 @@ class SignatureGeneratorForm extends FormBase {
       '#type' => 'textfield',
       '#title' => $this->t('Pronouns'),
       '#placeholder' => $this->t($pronoun_placeholder . ' etc.'),
-    ];
-
-    $form['credentials'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Credentials'),
-      '#placeholder' => $this->t('Ph.D'),
     ];
 
     $form['position_title'] = [
@@ -113,7 +129,42 @@ class SignatureGeneratorForm extends FormBase {
       '#placeholder' => $this->t('john.smith@example.com'),
     ];
 
+    $form['submit'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Generate Signature'),
+      '#ajax' => [
+        'callback' => '::ajaxSubmitCallback',
+        'wrapper' => 'result-wrapper',
+      ],
+    ];
+
     return $form;
+  }
+
+  /**
+   * AJAX callback for the form submission.
+   */
+  public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
+    $form_values = $form_state->getValues();
+    $data = [
+      '#theme' => 'signature_result',
+      '#data' => [
+        'name' => implode(' ', [$form_values['first_name'], $form_values['last_name']]),
+        'creds' => $form_values['credentials'],
+        'pronouns' => $form_values['pronouns'],
+        'title' => $form_values['position_title'],
+        'department' => $form_values['department_unit'],
+        'sub_unit' => $form_values['sub_unit'],
+        'address' => $form_values['address'],
+        'city' => $form_values['city_state_zip'],
+        'phone' => $form_values['phone'],
+        'email' => $form_values['email'],
+      ],
+    ];
+
+    $response = new AjaxResponse();
+    $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
+    return $response;
   }
 
   /**

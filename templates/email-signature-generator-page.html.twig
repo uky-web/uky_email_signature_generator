@@ -16,20 +16,25 @@
       <span>(For email software that doesn't support the full signature)</span>
     </div>
     <div class="column">
-      <div id="demo" class="left"></div>
+      <div id="demo" class="left">
+        <div id="result-wrapper">
+          {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
+            'data': {
+              'name': data.first_name ~ ' ' ~ data.last_name,
+              'creds': data.credentials,
+              'pronouns': data.pronouns,
+              'title': data.position_title,
+              'department': data.department_unit,
+              'sub_unit': data.sub_unit,
+              'address': data.sub_unit,
+              'city': data.address,
+              'phone': data.city_state_zip,
+              'email': data.phone,
+            }
+          }) }}
+        </div>
+      </div>
       <div id="directions" class="left" style="display: none;">
-
-        {{ include('@uky_email_signature_generator/templates/signature.html', {
-          'name': 'name',
-          'creds': 'creds',
-          'title': 'title',
-          'department': 'department',
-          'address': 'address',
-          'city': 'city',
-          'phone': 'phone',
-          'email': 'email',
-        }) }}
-
         <button id="copy-button" class="uky-button copy-btn" type="button"   style="display: none;">
           Copy HTML version to clipboard!
         </button>
