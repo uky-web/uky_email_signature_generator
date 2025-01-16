@@ -1,21 +1,27 @@
 /*******************************
          Element Styles
 *******************************/
-
+/* Only show directions after signature generation */
 #result-column #directions {
   display: none;
 }
-
 #result-column.generated #directions {
   display: block;
 }
 
-#result-text {
+/* Always hide plaintext signature */
+#result-column #result-text {
   display: none;
 }
 
-#directions h2 {
+#result-column #directions h2 {
   font-size: 1.314rem;
+}
+
+/* Offset scroll point for the preview to avoid scrolling behind the admin bar */
+#result-column .scroll-to {
+  position: absolute;
+  transform: translateY(-80px);
 }
 
 button.action-button {
