@@ -3,8 +3,6 @@
     "description": "A custom page that includes a client-side html email signature generator.",
     "type": "drupal-module",
     "require": {
-        "harvesthq/chosen": "^1.8",
-        "zenorocha/clipboardjs": "^2.0",
         "semantic/ui": "^2.5"
     },
     "license": "GPL-2.0-or-later",

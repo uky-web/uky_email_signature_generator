@@ -48,9 +48,7 @@ class GeneratorFormController extends ControllerBase {
       '#attached' => [
         'library' => [
           'uky_email_signature_generator/semantic-ui',
-          'uky_email_signature_generator/clipboard-js',
-          'uky_email_signature_generator/chosen',
-          'uky_email_signature_generator/signature-generator-custom',
+          'uky_email_signature_generator/uky-email-signature-generator',
         ]
       ]
     ];

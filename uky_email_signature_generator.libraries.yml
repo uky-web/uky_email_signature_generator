@@ -1,4 +1,4 @@
-signature-generator-custom:
+uky-email-signature-generator:
   css:
     layout:
       css/page.css: {}
@@ -14,20 +14,5 @@ semantic-ui:
       vendor/semantic/ui/dist/semantic.min.css: {}
   js:
     vendor/semantic/ui/dist/semantic.min.js: {}
-  dependencies:
-    - core/jquery
-
-clipboard-js:
-  js:
-    vendor/zenorocha/clipboardjs/dist/clipboard.min.js: {}
-  dependencies:
-    - core/jquery
-
-chosen:
-  css:
-    layout:
-      vendor/harvesthq/chosen/chosen.min.css: {}
-  js:
-    vendor/harvesthq/chosen/chosen.jquery.min.js: {}
   dependencies:
     - core/jquery
