@@ -119,7 +119,7 @@
 {% if data.pronouns is not null and data.pronouns is not empty %}
   {% set lines = lines|merge([data.pronouns]) %}
 {% endif %}
-{% if data.title is not null and data.title is not empty %}
+{% if (data.title is not null and data.title is not empty) or (data.university is not null and data.university is not empty) %}
   {% set lines = lines|merge([data.title ~ (data.title is not null and data.title is not empty ? ', ' : '') ~ data.university]) %}
 {% endif %}
 {% if (data.department is not null and data.department is not empty) or (data.sub_unit is not null and data.sub_unit is not empty) %}
