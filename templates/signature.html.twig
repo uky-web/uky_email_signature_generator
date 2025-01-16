@@ -1,114 +1,141 @@
-<head>
-  <style>
-    body {font-size: 14px; line-height: 18px;}
-    table {margin:0;padding:0;}
-    tr {margin:0;padding:0;}
-    .headshot {border-radius: 100%; max-width:100%; max-height: 100%;}
-    .font {font-family:georgia,times,serif;}
-    .inner-td{margin:0;padding:0;white-space:nowrap;}
-    .color-tr{color:#b0a49b;}
-    .logo-td1 {width:100px;margin:0;padding-right:10px; vertical-align: top;}
-    .logo-td2{width:5px;}
-    .right-top-td{margin:0;padding:0 20px; line-height: 1.3em; border-left:1px solid #0033a0;}
-    .right-table{border:none;text-decoration:none;font-family:georgia,times,serif;font-size:14px;color:#0033a0;border-collapse:collapse;-webkit-text-size-adjust:none;}
-    .name-span{font-size:1.6em;color:#0033a0;}
-    .cred-span{font-size:1.5em;color:#0033a0;}
-    .position-span{color:#0033a0;}
-    .company-span{color:#0033a0; font-weight: 600;}
-    .phone-letter{color:#0033a0;}
-    .no-dec{border:none;text-decoration:none;}
-    .phone-number{border:none;color:#0033a0;text-decoration:none;}
-    .web-link{color:#0033a0;text-decoration:none;}
-  </style>
-</head>
-<body>
-<div>
-  <table width="320" id="sig" cellspacing="0" cellpadding="0" border-spacing="0" style="margin: 0; padding: 0">
-    <tbody>
-      <tr style="margin: 0; padding: 0">
-        <td width="110" class="top-td logo-td1" style="margin: 0; padding-right: 10px; vertical-align: top; width: 100px">
-          <img id="top-logo" border="0" width="100" height="71"
-               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABHCAYAAADx2uLMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGNUQyMzMwMjExN0IxMUU3OTAyNkIzNUMyOEU2RDMzQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGNUQyMzMwMzExN0IxMUU3OTAyNkIzNUMyOEU2RDMzQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRGQjUzN0ZGMTE3OTExRTc5MDI2QjM1QzI4RTZEMzNBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRGQjUzODAwMTE3OTExRTc5MDI2QjM1QzI4RTZEMzNBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+vjgYTQAACe9JREFUeNrsXQls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">
-        </td>
-        <td valign="top" class="right-top-td"
-            style="border-left: 1px solid #0033a0; line-height: 1.3em; margin: 0; padding: 0 20px">
-          <table id="sig2" cellspacing="0" cellpadding="0" border-spacing="0" class="right-table" style="-webkit-text-size-adjust: none; border: none; border-collapse: collapse; color: #0033a0; font-family: georgia,times,serif; font-size: 14px; margin: 0; padding: 0; text-decoration: none">
-            <tbody>
-              <tr style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ data.name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (data.creds is not null and data.creds is not empty) ? ', ' ~ data.creds : '' }}</span>
-                </td>
-              </tr>
-              <tr style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span id="pronouns" class="pronoun-span" style="color: #0033a0; font-style: italic">
-                    {{ data.pronouns }}
-                  </span>
-                </td>
-              </tr>
-              <tr id="title" style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="position-span" style="color: #0033a0">
-                    {{ data.title }}
-                  </span>
-                </td>
-              </tr>
-              <tr id="org" style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="position-span" style="color: #0033a0">
-                    {{ data.university }}
-                  </span>
-                </td>
-              </tr>
-              <tr id="department" style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="position-span" style="color: #0033a0">
-                    {{ data.department }}
-                  </span>
-                </td>
-              </tr>
-              <tr id="department" style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="position-span" style="color: #0033a0">
-                    {{ data.sub_unit }}
-                  </span>
-                </td>
-              </tr>
-              <tr id="address" style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="position-span" style="color: #0033a0">
-                    {{ data.address }}
-                  </span>
-                </td>
-              </tr>
-              <tr id="city" style="margin: 0; padding: 0">
-                <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                  <span class="position-span" style="color: #0033a0">
-                    {{ data.city }}
-                  </span>
-                </td>
-              </tr>
-              <tr class="color-tr" id="phone" style="color: #b0a49b; margin: 0; padding: 0">
-                <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
-                  <a href="tel:{{ data.phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
-                    <span class="phone-number" style="border: none; color: #0033a0; text-decoration: none">
-                      {{ data.phone }}
+<div id="result-html">
+  <head>
+    <style>
+      body {font-size: 14px; line-height: 18px;}
+      table {margin:0;padding:0;}
+      tr {margin:0;padding:0;}
+      .headshot {border-radius: 100%; max-width:100%; max-height: 100%;}
+      .font {font-family:georgia,times,serif;}
+      .inner-td{margin:0;padding:0;white-space:nowrap;}
+      .color-tr{color:#b0a49b;}
+      .logo-td1 {width:100px;margin:0;padding-right:10px; vertical-align: top;}
+      .logo-td2{width:5px;}
+      .right-top-td{margin:0;padding:0 20px; line-height: 1.3em; border-left:1px solid #0033a0;}
+      .right-table{border:none;text-decoration:none;font-family:georgia,times,serif;font-size:14px;color:#0033a0;border-collapse:collapse;-webkit-text-size-adjust:none;}
+      .name-span{font-size:1.6em;color:#0033a0;}
+      .cred-span{font-size:1.5em;color:#0033a0;}
+      .position-span{color:#0033a0;}
+      .company-span{color:#0033a0; font-weight: 600;}
+      .phone-letter{color:#0033a0;}
+      .no-dec{border:none;text-decoration:none;}
+      .phone-number{border:none;color:#0033a0;text-decoration:none;}
+      .web-link{color:#0033a0;text-decoration:none;}
+    </style>
+  </head>
+  <body>
+  <div>
+    <table width="320" id="sig" cellspacing="0" cellpadding="0" border-spacing="0" style="margin: 0; padding: 0">
+      <tbody>
+        <tr style="margin: 0; padding: 0">
+          <td width="110" class="top-td logo-td1" style="margin: 0; padding-right: 10px; vertical-align: top; width: 100px">
+            <img id="top-logo" border="0" width="100" height="71"
+                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABHCAYAAADx2uLMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGNUQyMzMwMjExN0IxMUU3OTAyNkIzNUMyOEU2RDMzQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGNUQyMzMwMzExN0IxMUU3OTAyNkIzNUMyOEU2RDMzQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRGQjUzN0ZGMTE3OTExRTc5MDI2QjM1QzI4RTZEMzNBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRGQjUzODAwMTE3OTExRTc5MDI2QjM1QzI4RTZEMzNBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+vjgYTQAACe9JREFUeNrsXQls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">
+          </td>
+          <td valign="top" class="right-top-td"
+              style="border-left: 1px solid #0033a0; line-height: 1.3em; margin: 0; padding: 0 20px">
+            <table id="sig2" cellspacing="0" cellpadding="0" border-spacing="0" class="right-table" style="-webkit-text-size-adjust: none; border: none; border-collapse: collapse; color: #0033a0; font-family: georgia,times,serif; font-size: 14px; margin: 0; padding: 0; text-decoration: none">
+              <tbody>
+                <tr style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ data.name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (data.creds is not null and data.creds is not empty) ? ', ' ~ data.creds : '' }}</span>
+                  </td>
+                </tr>
+                <tr style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span id="pronouns" class="pronoun-span" style="color: #0033a0; font-style: italic">
+                      {{ data.pronouns }}
                     </span>
-                  </a>
-                </td>
-              </tr>
-              <tr class="color-tr" id="email" style="color: #b0a49b; margin: 0; padding: 0">
-                <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
-                  <a href="mailto:{{ data.email }}" target="_blank" class="no-dec web-link" style="border: none; color: #0033a0; text-decoration: none">
-                    {{ data.email }}
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+                  </td>
+                </tr>
+                <tr id="title" style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="position-span" style="color: #0033a0">
+                      {{ data.title }}
+                    </span>
+                  </td>
+                </tr>
+                <tr id="org" style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="position-span" style="color: #0033a0">
+                      {{ data.university }}
+                    </span>
+                  </td>
+                </tr>
+                <tr id="department" style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="position-span" style="color: #0033a0">
+                      {{ data.department }}
+                    </span>
+                  </td>
+                </tr>
+                <tr id="department" style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="position-span" style="color: #0033a0">
+                      {{ data.sub_unit }}
+                    </span>
+                  </td>
+                </tr>
+                <tr id="address" style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="position-span" style="color: #0033a0">
+                      {{ data.address }}
+                    </span>
+                  </td>
+                </tr>
+                <tr id="city" style="margin: 0; padding: 0">
+                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
+                    <span class="position-span" style="color: #0033a0">
+                      {{ data.city }}
+                    </span>
+                  </td>
+                </tr>
+                <tr class="color-tr" id="phone" style="color: #b0a49b; margin: 0; padding: 0">
+                  <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
+                    <a href="tel:{{ data.phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
+                      <span class="phone-number" style="border: none; color: #0033a0; text-decoration: none">
+                        {{ data.phone }}
+                      </span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="color-tr" id="email" style="color: #b0a49b; margin: 0; padding: 0">
+                  <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
+                    <a href="mailto:{{ data.email }}" target="_blank" class="no-dec web-link" style="border: none; color: #0033a0; text-decoration: none">
+                      {{ data.email }}
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </body>
 </div>
-</body>
+{% set lines = [] %}
+{% set lines = lines|merge([data.name ~ (data.creds is not null and data.creds is not empty ? ', ' ~ data.creds : '')]) %}
+{% if data.pronouns is not null and data.pronouns is not empty %}
+  {% set lines = lines|merge([data.pronouns]) %}
+{% endif %}
+{% if data.title is not null and data.title is not empty %}
+  {% set lines = lines|merge([data.title ~ (data.title is not null and data.title is not empty ? ', ' : '') ~ data.university]) %}
+{% endif %}
+{% if (data.department is not null and data.department is not empty) or (data.sub_unit is not null and data.sub_unit is not empty) %}
+  {% set lines = lines|merge([data.department ~ (data.department is not null and data.department is not empty and data.sub_unit is not null and data.sub_unit is not empty ? ' - ' : '') ~ data.sub_unit]) %}
+{% endif %}
+{% if data.address is not null and data.address is not empty %}
+  {% set lines = lines|merge(['', data.address]) %}
+  {% set lines = lines|merge([data.city, '']) %}
+{% endif %}
+{% if data.phone is not null and data.phone is not empty %}
+  {% set lines = lines|merge([data.phone]) %}
+{% endif %}
+{% if data.email is not null and data.email is not empty %}
+  {% set lines = lines|merge([data.email]) %}
+{% endif %}
+<div id="result-text">
+--
+{{ lines|join("\n") }}
+</div>

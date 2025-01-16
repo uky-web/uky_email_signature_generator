@@ -11,7 +11,6 @@
     <div id="result-column" class="column">
       <div id="demo" class="left">
         <div id="result-wrapper">
-          <br />
           {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
             'data': {
               'name': data.first_name ~ ' ' ~ data.last_name,
@@ -30,7 +29,7 @@
         </div>
       </div>
       <div id="directions" class="left">
-        <button id="sig-copy-to-clipboard" class="button" data-action="copy-element" data-target="#result-wrapper">Copy signature</button>
+        <button id="sig-copy-to-clipboard" class="button" data-action="copy-element" data-target="#result-html" data-target-text="#result-text">Copy signature</button>
 
         <div id="email-signature-instructions">
           <div class="content">

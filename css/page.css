@@ -5,3 +5,7 @@
 #result-column.generated #directions {
   display: block;
 }
+
+#result-text {
+  display: none;
+}
