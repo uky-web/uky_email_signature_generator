@@ -132,7 +132,7 @@ class SignatureGeneratorForm extends FormBase {
 
     $response = new AjaxResponse();
     // Scroll to top of form/page
-    $response->addCommand(new ScrollTopCommand('.page-title'));
+    $response->addCommand(new ScrollTopCommand('body'));
 
     if ($form_state->hasAnyErrors()) {
       // Display errors
