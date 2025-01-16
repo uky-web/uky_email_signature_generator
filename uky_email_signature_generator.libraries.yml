@@ -1,10 +1,10 @@
 signature-generator-custom:
   css:
     layout:
-      css/legacy.css: {}
+      css/page.css: {}
+      css/signature.css: {}
   js:
     js/main.js: {}
-    js/variables.js: {}
   dependencies:
     - core/jquery
 

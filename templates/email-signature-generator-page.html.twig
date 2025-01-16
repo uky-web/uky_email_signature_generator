@@ -8,7 +8,7 @@
         {{ form }}
       </div>
     </div>
-    <div class="column">
+    <div id="result-column" class="column">
       <div id="demo" class="left">
         <div id="result-wrapper">
           <br />
@@ -30,10 +30,7 @@
         </div>
       </div>
       <div id="directions" class="left">
-        <button id="copy-button" class="uky-button copy-btn" type="button"   style="display: none;">
-          Copy HTML version to clipboard!
-        </button>
-        <a id="download-file-button" class="uky-button" type="button" href="#" style="display: none;">Download HTML File</a>
+        <button id="sig-copy-to-clipboard" class="button" data-action="copy-element" data-target="#result-wrapper">Copy signature</button>
 
         <div id="email-signature-instructions">
           <div class="content">
@@ -55,6 +52,3 @@
   </div>
 </div>
 <!--</div>-->
-
-<!-- update hidden input for ZeroClipboard -->
-<input type="text" id="zc-input" value="this would be really nice to copy" style="display: none;" />

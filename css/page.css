@@ -1,0 +1,7 @@
+#result-column #directions {
+  display: none;
+}
+
+#result-column.generated #directions {
+  display: block;
+}
