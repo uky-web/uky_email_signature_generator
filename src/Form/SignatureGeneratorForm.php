@@ -5,6 +5,7 @@ namespace Drupal\uky_email_signature_generator\Form;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\ScrollTopCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Renderer;
@@ -132,6 +133,7 @@ class SignatureGeneratorForm extends FormBase {
     $response = new AjaxResponse();
     $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
     $response->addCommand(new InvokeCommand('#result-column', 'addClass', ['generated']));
+    $response->addCommand(new ScrollTopCommand('.page-title'));
     return $response;
   }
 
