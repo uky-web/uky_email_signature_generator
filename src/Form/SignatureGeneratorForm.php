@@ -100,6 +100,7 @@ class SignatureGeneratorForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Generate Signature'),
       '#ajax' => [
+        'event' => 'click',
         'callback' => '::ajaxSubmitCallback',
         'wrapper' => 'signature-generator',
       ],
