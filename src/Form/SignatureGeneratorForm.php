@@ -87,7 +87,7 @@ class SignatureGeneratorForm extends FormBase {
     ];
 
     $form['phone'] = [
-      '#type' => 'textfield',
+      '#type' => 'tel',
       '#title' => $this->t('Phone'),
     ];
 
@@ -101,7 +101,7 @@ class SignatureGeneratorForm extends FormBase {
       '#value' => $this->t('Generate Signature'),
       '#ajax' => [
         'callback' => '::ajaxSubmitCallback',
-        'wrapper' => 'result-wrapper',
+        'wrapper' => 'signature-generator',
       ],
     ];
 
@@ -131,9 +131,32 @@ class SignatureGeneratorForm extends FormBase {
     ];
 
     $response = new AjaxResponse();
+    // Scroll to top of form/page
+    $response->addCommand(new ScrollTopCommand('.page-title'));
+
+    if ($form_state->hasAnyErrors()) {
+      // Display errors
+      $form_state->setRebuild();
+      $message = [
+        '#theme' => 'status_messages',
+        '#message_list' => [
+          [
+            '#message' => 'Please check that required fields are filled out.',
+          ],
+        ],
+      ];
+      $messages = \Drupal::service('renderer')->render($message);
+      $response->addCommand(new HtmlCommand('#signature-generator-form', $form));
+      $response->addCommand(new HtmlCommand('#form-messages', $messages));
+      return $response;
+    }
+
+    // Build signature and clear any error messages
     $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
     $response->addCommand(new InvokeCommand('#result-column', 'addClass', ['generated']));
-    $response->addCommand(new ScrollTopCommand('.page-title'));
+    $response->addCommand(new HtmlCommand('#form-messages', ''));
+
+    $form_state->setRebuild(FALSE);
     return $response;
   }
 
