@@ -37,71 +37,71 @@
               <tbody>
                 <tr style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ data.name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (data.creds is not null and data.creds is not empty) ? ', ' ~ data.creds : '' }}</span>
+                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}</span>
                   </td>
                 </tr>
                 <tr style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span id="pronouns" class="pronoun-span" style="color: #0033a0; font-style: italic">
-                      {{ data.pronouns }}
+                      {{ pronouns }}
                     </span>
                   </td>
                 </tr>
                 <tr id="title" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span class="position-span" style="color: #0033a0">
-                      {{ data.title }}
+                      {{ title }}
                     </span>
                   </td>
                 </tr>
                 <tr id="org" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span class="position-span" style="color: #0033a0">
-                      {{ data.university }}
+                      {{ university }}
                     </span>
                   </td>
                 </tr>
                 <tr id="department" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span class="position-span" style="color: #0033a0">
-                      {{ data.department }}
+                      {{ department }}
                     </span>
                   </td>
                 </tr>
                 <tr id="department" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span class="position-span" style="color: #0033a0">
-                      {{ data.sub_unit }}
+                      {{ sub_unit }}
                     </span>
                   </td>
                 </tr>
                 <tr id="address" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span class="position-span" style="color: #0033a0">
-                      {{ data.address }}
+                      {{ address }}
                     </span>
                   </td>
                 </tr>
                 <tr id="city" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
                     <span class="position-span" style="color: #0033a0">
-                      {{ data.city }}
+                      {{ city }}
                     </span>
                   </td>
                 </tr>
                 <tr class="color-tr" id="phone" style="color: #b0a49b; margin: 0; padding: 0">
                   <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
-                    <a href="tel:{{ data.phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
+                    <a href="tel:{{ phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
                       <span class="phone-number" style="border: none; color: #0033a0; text-decoration: none">
-                        {{ data.phone }}
+                        {{ phone }}
                       </span>
                     </a>
                   </td>
                 </tr>
                 <tr class="color-tr" id="email" style="color: #b0a49b; margin: 0; padding: 0">
                   <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
-                    <a href="mailto:{{ data.email }}" target="_blank" class="no-dec web-link" style="border: none; color: #0033a0; text-decoration: none">
-                      {{ data.email }}
+                    <a href="mailto:{{ email }}" target="_blank" class="no-dec web-link" style="border: none; color: #0033a0; text-decoration: none">
+                      {{ email }}
                     </a>
                   </td>
                 </tr>
@@ -115,25 +115,25 @@
   </body>
 </div>
 {% set lines = [] %}
-{% set lines = lines|merge([data.name ~ (data.creds is not null and data.creds is not empty ? ', ' ~ data.creds : '')]) %}
-{% if data.pronouns is not null and data.pronouns is not empty %}
-  {% set lines = lines|merge([data.pronouns]) %}
+{% set lines = lines|merge([name ~ (creds is not null and creds is not empty ? ', ' ~ creds : '')]) %}
+{% if pronouns is not null and pronouns is not empty %}
+  {% set lines = lines|merge([pronouns]) %}
 {% endif %}
-{% if (data.title is not null and data.title is not empty) or (data.university is not null and data.university is not empty) %}
-  {% set lines = lines|merge([data.title ~ (data.title is not null and data.title is not empty ? ', ' : '') ~ data.university]) %}
+{% if (title is not null and title is not empty) or (university is not null and university is not empty) %}
+  {% set lines = lines|merge([title ~ (title is not null and title is not empty ? ', ' : '') ~ university]) %}
 {% endif %}
-{% if (data.department is not null and data.department is not empty) or (data.sub_unit is not null and data.sub_unit is not empty) %}
-  {% set lines = lines|merge([data.department ~ (data.department is not null and data.department is not empty and data.sub_unit is not null and data.sub_unit is not empty ? ' - ' : '') ~ data.sub_unit]) %}
+{% if (department is not null and department is not empty) or (sub_unit is not null and sub_unit is not empty) %}
+  {% set lines = lines|merge([department ~ (department is not null and department is not empty and sub_unit is not null and sub_unit is not empty ? ' - ' : '') ~ sub_unit]) %}
 {% endif %}
-{% if data.address is not null and data.address is not empty %}
-  {% set lines = lines|merge(['', data.address]) %}
-  {% set lines = lines|merge([data.city, '']) %}
+{% if address is not null and address is not empty %}
+  {% set lines = lines|merge(['', address]) %}
+  {% set lines = lines|merge([city, '']) %}
 {% endif %}
-{% if data.phone is not null and data.phone is not empty %}
-  {% set lines = lines|merge([data.phone]) %}
+{% if phone is not null and phone is not empty %}
+  {% set lines = lines|merge([phone]) %}
 {% endif %}
-{% if data.email is not null and data.email is not empty %}
-  {% set lines = lines|merge([data.email]) %}
+{% if email is not null and email is not empty %}
+  {% set lines = lines|merge([email]) %}
 {% endif %}
 <div id="result-text">
 --

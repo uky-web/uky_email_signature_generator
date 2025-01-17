@@ -118,19 +118,17 @@ class SignatureGeneratorForm extends FormBase {
 
     $data = [
       '#theme' => 'signature_result',
-      '#data' => [
-        'name' => implode(' ', [$form_values['first_name'], $form_values['last_name']]),
-        'creds' => $form_values['credentials'],
-        'pronouns' => $form_values['pronouns'],
-        'title' => $form_values['position_title'],
-        'university' => $config->get('uky_email_signature_generator.university_name'),
-        'department' => $form_values['department_unit'],
-        'sub_unit' => $form_values['sub_unit'],
-        'address' => $form_values['address'],
-        'city' => $form_values['city_state_zip'],
-        'phone' => $form_values['phone'],
-        'email' => $form_values['email'],
-      ],
+      '#name' => implode(' ', [$form_values['first_name'], $form_values['last_name']]),
+      '#creds' => $form_values['credentials'],
+      '#pronouns' => $form_values['pronouns'],
+      '#title' => $form_values['position_title'],
+      '#university' => $config->get('uky_email_signature_generator.university_name'),
+      '#department' => $form_values['department_unit'],
+      '#sub_unit' => $form_values['sub_unit'],
+      '#address' => $form_values['address'],
+      '#city' => $form_values['city_state_zip'],
+      '#phone' => $form_values['phone'],
+      '#email' => $form_values['email'],
     ];
 
     $response = new AjaxResponse();

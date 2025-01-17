@@ -15,19 +15,17 @@
         <span class="spacer">&nbsp;</span>
         <div id="result-wrapper">
           {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
-            'data': {
-              'name': data.first_name ~ ' ' ~ data.last_name,
-              'creds': data.credentials,
-              'pronouns': data.pronouns,
-              'title': data.position_title,
-              'university': data.university,
-              'department': data.department_unit,
-              'sub_unit': data.sub_unit,
-              'address': data.address,
-              'city': data.city_state_zip,
-              'phone': data.phone,
-              'email': data.email,
-            }
+            'name': first_name ~ ' ' ~ last_name,
+            'creds': credentials,
+            'pronouns': pronouns,
+            'title': position_title,
+            'university': university,
+            'department': department_unit,
+            'sub_unit': sub_unit,
+            'address': address,
+            'city': city_state_zip,
+            'phone': phone,
+            'email': email,
           }) }}
         </div>
       </div>
