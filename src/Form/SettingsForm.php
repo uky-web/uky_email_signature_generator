@@ -48,7 +48,7 @@ class SettingsForm extends ConfigFormBase {
 
     $form['instructions'] = [
       '#type' => 'text_format',
-      '#format'=> 'full_html',
+      '#format'=> 'basic_html',
       '#title' => t('Signature copy instructions:'),
       '#default_value' => $config->get('uky_email_signature_generator.instructions')['value'],
       '#description' => t('Instructions that display below the signature preview for copying and using it in email clients.'),
