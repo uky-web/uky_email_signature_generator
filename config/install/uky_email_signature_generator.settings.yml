@@ -1,4 +1,20 @@
 uky_email_signature_generator:
   page_title: 'Email Signature Generator'
-  university_name: 'University Name'
-  instructions: 'Copy and paste the above signature into your email client.'
+  university_name: 'University of Kentucky'
+  instructions:
+    value: >
+      <p>
+          <strong>Using your signature</strong>
+      </p>
+      <p>
+          Click the button above to automatically copy your signature to the clipboard. You may need to grant your browser permission to access the clipboard. You can also manually copy the signature by selecting the text and pressing <code>Ctrl/Cmd+C</code>.
+      </p>
+      <p>
+          The steps for adding your signature vary depending on your email client. Consult your email client documentation for how to create and edit email signatures.
+      </p>
+      <p>
+          Not all versions of email software support importing HTML signatures. The copy button above will also copy a plain-text version of your signature for use in email clients that do not support HTML.
+      </p>
+      <p>
+          More info/tech support: <a href="https://uky.service-now.com/techhelp?id=kb_article&amp;sysparm_article=KB0011268" target="_blank">How do I add an Email Signature in Microsoft Outlook?</a>
+      </p>
