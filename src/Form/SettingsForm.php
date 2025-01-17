@@ -54,6 +54,13 @@ class SettingsForm extends ConfigFormBase {
       '#description' => t('Instructions that display below the signature preview for copying and using it in email clients.'),
     ];
 
+    $form['randomize_example'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Randomize example signature'),
+      '#default_value' => $config->get('uky_email_signature_generator.randomize_example'),
+      '#description' => t('Show a randomly-generated example signature on page load, instead of a static one.'),
+    ];
+
     return $form;
   }
 
@@ -74,6 +81,7 @@ class SettingsForm extends ConfigFormBase {
     $config->set('uky_email_signature_generator.page_title', $form_state->getValue('page_title'));
     $config->set('uky_email_signature_generator.university_name', $form_state->getValue('university_name'));
     $config->set('uky_email_signature_generator.instructions', $form_state->getValue('instructions'));
+    $config->set('uky_email_signature_generator.randomize_example', $form_state->getValue('randomize_example'));
     $config->save();
     return parent::submitForm($form, $form_state);
   }

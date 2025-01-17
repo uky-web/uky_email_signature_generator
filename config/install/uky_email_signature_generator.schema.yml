@@ -15,3 +15,6 @@ uky_email_signature_generator:
           instructions:
             type: text
             label: 'Signature copy instructions'
+          randomize_example:
+            type: boolean
+            label: 'Randomize example signature'
