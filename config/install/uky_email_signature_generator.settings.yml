@@ -1,2 +1,4 @@
 uky_email_signature_generator:
   page_title: 'Email Signature Generator'
+  university_name: 'University Name'
+  instructions: 'Copy and paste the above signature into your email client.'

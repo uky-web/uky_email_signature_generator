@@ -8,4 +8,10 @@ uky_email_signature_generator:
         mapping:
           page_title:
             type: text
-            label: 'Email Signature Generator'
+            label: 'Page title'
+          university_name:
+            type: text
+            label: 'University name'
+          instructions:
+            type: text
+            label: 'Signature copy instructions'

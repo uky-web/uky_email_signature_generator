@@ -113,7 +113,9 @@ class SignatureGeneratorForm extends FormBase {
    * AJAX callback for the form submission.
    */
   public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
+    $config = $this->config('uky_email_signature_generator.settings');
     $form_values = $form_state->getValues();
+
     $data = [
       '#theme' => 'signature_result',
       '#data' => [
@@ -121,7 +123,7 @@ class SignatureGeneratorForm extends FormBase {
         'creds' => $form_values['credentials'],
         'pronouns' => $form_values['pronouns'],
         'title' => $form_values['position_title'],
-        'university' => 'University of Kentucky',
+        'university' => $config->get('uky_email_signature_generator.university_name'),
         'department' => $form_values['department_unit'],
         'sub_unit' => $form_values['sub_unit'],
         'address' => $form_values['address'],

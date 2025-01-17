@@ -34,6 +34,11 @@ class GeneratorFormController extends ControllerBase {
     );
   }
 
+  public function getTitle(): string {
+    return $this->config('uky_email_signature_generator.settings')
+      ->get('uky_email_signature_generator.page_title');
+  }
+
   /**
    * Returns a simple page.
    *

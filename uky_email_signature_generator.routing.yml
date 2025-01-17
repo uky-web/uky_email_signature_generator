@@ -3,6 +3,7 @@ uky_email_signature_generator.generator_form:
   defaults:
     _controller: '\Drupal\uky_email_signature_generator\Controller\GeneratorFormController::page'
     _title: 'Email Signature Generator'
+    _title_callback: '\Drupal\uky_email_signature_generator\Controller\GeneratorFormController::getTitle'
   requirements:
     _permission: 'access email signature generator page'
 

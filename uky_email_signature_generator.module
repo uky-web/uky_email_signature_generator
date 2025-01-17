@@ -3,6 +3,8 @@
  * Implements hook_theme().
  */
 function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
+  $config = \Drupal::config('uky_email_signature_generator.settings');
+
   return [
     'uky_email_signature_generator_form' => [
       'path' => $path . '/templates',
@@ -16,14 +18,15 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
           'credentials' => 'Ph.D',
           'pronouns' => 'he/him',
           'position_title' => 'Director',
-          'university' => 'University of Kentucky',
+          'university' => $config->get('uky_email_signature_generator.university_name'),
           'department_unit' => 'Department/Unit',
           'sub_unit' => '',
           'address' => '123 Main St.',
           'city_state_zip' => 'Lexington, KY 40506',
           'phone' => '859.555.5555',
           'email' => 'john.smith@example.com',
-        ]
+        ],
+        'sig_instructions' => $config->get('uky_email_signature_generator.instructions'),
       ],
     ],
     'signature_result' => [
@@ -38,7 +41,7 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
           'credentials' => NULL,
           'pronouns' => NULL,
           'position_title' => NULL,
-          'university' => 'University of Kentucky',
+          'university' => NULL,//$config->get('uky_email_signature_generator.university_name'),
           'department_unit' => NULL,
           'sub_unit' => NULL,
           'address' => NULL,
