@@ -12,7 +12,10 @@ uky_email_signature_generator:
           university_name:
             type: text
             label: 'University name'
-          instructions:
+          form_instructions:
+            type: text
+            label: 'Form instructions'
+          copy_instructions:
             type: text
             label: 'Signature copy instructions'
           randomize_example:

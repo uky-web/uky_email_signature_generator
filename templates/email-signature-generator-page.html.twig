@@ -2,9 +2,9 @@
 <div class="twelve wide column">
   <div id="signature-generator" class="ui two column aligned stackable divided grid">
     <div class="column">
-      <h2>Form</h2>
-      <p>Fill out the form below to generate your email signature.</p>
-      <div id="form-messages"></div>
+      <div id="#form-instructions">
+        {{ form_instructions.value | raw }}
+      </div>
       {{ form }}
     </div>
     <div id="result-column" class="column">

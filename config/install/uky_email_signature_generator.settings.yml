@@ -1,7 +1,13 @@
 uky_email_signature_generator:
   page_title: 'Email Signature Generator'
   university_name: 'University of Kentucky'
-  instructions:
+  form_instructions:
+    value: >
+      <h2>Form</h2>
+      <p>
+          Fill out the form below to generate your email signature.
+      </p>
+  copy_instructions:
     value: >
       <p>
           <strong>Using your signature</strong>

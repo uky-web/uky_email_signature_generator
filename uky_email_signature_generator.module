@@ -24,7 +24,8 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
         'city_state_zip' => 'Lexington, KY 40506',
         'phone' => '859.555.5555',
         'email' => 'john.smith@example.com',
-        'sig_instructions' => $config->get('uky_email_signature_generator.instructions'),
+        'form_instructions' => $config->get('uky_email_signature_generator.form_instructions'),
+        'sig_instructions' => $config->get('uky_email_signature_generator.copy_instructions'),
       ],
     ],
     'signature_result' => [

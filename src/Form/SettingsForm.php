@@ -46,11 +46,19 @@ class SettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('uky_email_signature_generator.university_name'),
     ];
 
-    $form['instructions'] = [
+    $form['form_instructions'] = [
+      '#type' => 'text_format',
+      '#format'=> 'basic_html',
+      '#title' => t('Form instructions:'),
+      '#default_value' => $config->get('uky_email_signature_generator.form_instructions')['value'],
+      '#description' => t('Instructions for filling out the generator form.'),
+    ];
+
+    $form['copy_instructions'] = [
       '#type' => 'text_format',
       '#format'=> 'basic_html',
       '#title' => t('Signature copy instructions:'),
-      '#default_value' => $config->get('uky_email_signature_generator.instructions')['value'],
+      '#default_value' => $config->get('uky_email_signature_generator.copy_instructions')['value'],
       '#description' => t('Instructions that display below the signature preview for copying and using it in email clients.'),
     ];
 
@@ -68,7 +76,7 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
-    if ($form_state->getValue('page_title') == NULL) {
+    if (empty($form_state->getValue('page_title'))) {
       $form_state->setErrorByName('page_title', t('Please enter a valid Page title.'));
     }
   }
@@ -76,13 +84,14 @@ class SettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  public function submitForm(array &$form, FormStateInterface $form_state): void {
     $config = $this->config('uky_email_signature_generator.settings');
     $config->set('uky_email_signature_generator.page_title', $form_state->getValue('page_title'));
     $config->set('uky_email_signature_generator.university_name', $form_state->getValue('university_name'));
-    $config->set('uky_email_signature_generator.instructions', $form_state->getValue('instructions'));
+    $config->set('uky_email_signature_generator.form_instructions', $form_state->getValue('form_instructions'));
+    $config->set('uky_email_signature_generator.copy_instructions', $form_state->getValue('copy_instructions'));
     $config->set('uky_email_signature_generator.randomize_example', $form_state->getValue('randomize_example'));
     $config->save();
-    return parent::submitForm($form, $form_state);
+    parent::submitForm($form, $form_state);
   }
 }
