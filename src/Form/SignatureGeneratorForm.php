@@ -5,6 +5,7 @@ namespace Drupal\uky_email_signature_generator\Form;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\HtmlCommand;
 use Drupal\Core\Ajax\InvokeCommand;
+use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Ajax\ScrollTopCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -39,6 +40,11 @@ class SignatureGeneratorForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
+    $form['status_messages'] = [
+      '#type' => 'status_messages',
+      '#weight' => -1000,
+    ];
+
     $form['first_name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('First Name'),
@@ -136,33 +142,16 @@ class SignatureGeneratorForm extends FormBase {
     $response->addCommand(new ScrollTopCommand('.scroll-to'));
 
     if ($form_state->hasAnyErrors()) {
-      // Display errors
-      $form_state->setRebuild();
-      $message = [
-        '#theme' => 'status_messages',
-        '#message_list' => [],
-      ];
-      foreach ($form_state->getErrors() as $error) {
-        $message['#message_list'][] = [
-          '#message' => $error,
-        ];
-      }
-      $messages = \Drupal::service('renderer')->render($message);
+      // Update form with errors
+      $response->addCommand(new ReplaceCommand('#signature-generator-form', $form));
+    } else {
+      // Build signature and display result
+      // TODO figure out why errors are not properly clearing on rebuild
+      $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
+      $response->addCommand(new InvokeCommand('#result-column', 'addClass', ['generated']));
       $response->addCommand(new HtmlCommand('#signature-generator-form', $form));
-      $response->addCommand(new HtmlCommand('#form-messages', $messages));
-      // TODO evaluate if this line does anything - errors still seem to display on page reload
-      $form_state->clearErrors();
-      return $response;
     }
 
-    // Build signature and clear any error messages
-    $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
-    $response->addCommand(new InvokeCommand('#result-column', 'addClass', ['generated']));
-    $response->addCommand(new HtmlCommand('#form-messages', ''));
-    // TODO see above note on this call's functionality
-    $form_state->clearErrors();
-
-    $form_state->setRebuild(FALSE);
     return $response;
   }
 
@@ -171,10 +160,10 @@ class SignatureGeneratorForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
     if (empty($form_state->getValue('first_name'))) {
-      $form_state->setErrorByName('first_name', $this->t('First Name is required.'));
+      $form_state->setErrorByName('first_name');
     }
     if (empty($form_state->getValue('last_name'))) {
-      $form_state->setErrorByName('last_name', $this->t('Last Name is required.'));
+      $form_state->setErrorByName('last_name');
     }
     parent::validateForm($form, $form_state);
   }
