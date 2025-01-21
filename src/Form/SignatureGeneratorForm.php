@@ -112,7 +112,7 @@ class SignatureGeneratorForm extends FormBase {
   /**
    * AJAX callback for the form submission.
    */
-  public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state) {
+  public function ajaxSubmitCallback(array &$form, FormStateInterface $form_state): AjaxResponse {
     $config = $this->config('uky_email_signature_generator.settings');
     $form_values = $form_state->getValues();
 
@@ -140,15 +140,18 @@ class SignatureGeneratorForm extends FormBase {
       $form_state->setRebuild();
       $message = [
         '#theme' => 'status_messages',
-        '#message_list' => [
-          [
-            '#message' => 'Please check that required fields are filled out.',
-          ],
-        ],
+        '#message_list' => [],
       ];
+      foreach ($form_state->getErrors() as $error) {
+        $message['#message_list'][] = [
+          '#message' => $error,
+        ];
+      }
       $messages = \Drupal::service('renderer')->render($message);
       $response->addCommand(new HtmlCommand('#signature-generator-form', $form));
       $response->addCommand(new HtmlCommand('#form-messages', $messages));
+      // TODO evaluate if this line does anything - errors still seem to display on page reload
+      $form_state->clearErrors();
       return $response;
     }
 
@@ -156,6 +159,8 @@ class SignatureGeneratorForm extends FormBase {
     $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
     $response->addCommand(new InvokeCommand('#result-column', 'addClass', ['generated']));
     $response->addCommand(new HtmlCommand('#form-messages', ''));
+    // TODO see above note on this call's functionality
+    $form_state->clearErrors();
 
     $form_state->setRebuild(FALSE);
     return $response;
@@ -171,16 +176,13 @@ class SignatureGeneratorForm extends FormBase {
     if (empty($form_state->getValue('last_name'))) {
       $form_state->setErrorByName('last_name', $this->t('Last Name is required.'));
     }
+    parent::validateForm($form, $form_state);
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
-    // Handle form submission.
-    \Drupal::messenger()->addMessage($this->t('Signature generated for @first_name @last_name.', [
-      '@first_name' => $form_state->getValue('first_name'),
-      '@last_name' => $form_state->getValue('last_name'),
-    ]));
+    // Do nothing as this form does not actually process/store data.
   }
 }
