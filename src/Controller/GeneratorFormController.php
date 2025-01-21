@@ -53,6 +53,7 @@ class GeneratorFormController extends ControllerBase {
         'library' => [
           'uky_email_signature_generator/semantic-ui',
           'uky_email_signature_generator/uky-email-signature-generator',
+          'core/drupal.ajax',
           'views/views.ajax',
         ]
       ],

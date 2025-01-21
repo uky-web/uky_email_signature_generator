@@ -40,6 +40,9 @@ class SignatureGeneratorForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state): array {
+    $form['#prefix'] = '<div id="signature-generator-form" class="ui form left">';
+    $form['#suffix'] = '</div>';
+
     $form['status_messages'] = [
       '#type' => 'status_messages',
       '#weight' => -1000,
@@ -108,7 +111,7 @@ class SignatureGeneratorForm extends FormBase {
       '#ajax' => [
         'event' => 'click',
         'callback' => '::ajaxSubmitCallback',
-        'wrapper' => 'signature-generator',
+        'wrapper' => 'signature-generator-form',
       ],
     ];
 
@@ -138,18 +141,21 @@ class SignatureGeneratorForm extends FormBase {
     ];
 
     $response = new AjaxResponse();
-    // Scroll to top of form/page
+    // Scroll to top of form/page and update form container
     $response->addCommand(new ScrollTopCommand('.scroll-to'));
+    // ReplaceCommand to replace the entire form, including the wrapper/selector
+    $response->addCommand(new ReplaceCommand(NULL, $form));
 
     if ($form_state->hasAnyErrors()) {
       // Update form with errors
-      $response->addCommand(new ReplaceCommand('#signature-generator-form', $form));
+      $first_field = sprintf('input[name="%s"]', array_key_first($form_state->getErrors()));
+      $response->addCommand(new InvokeCommand('#result-column', 'removeClass', ['generated']));
+      $response->addCommand(new InvokeCommand($first_field, 'focus'));
     } else {
       // Build signature and display result
-      // TODO figure out why errors are not properly clearing on rebuild
+      // HtmlCommand to replace the contents of the wrapper, leaving the wrapper div in place
       $response->addCommand(new HtmlCommand('#result-wrapper', $this->renderer->render($data)));
       $response->addCommand(new InvokeCommand('#result-column', 'addClass', ['generated']));
-      $response->addCommand(new HtmlCommand('#signature-generator-form', $form));
     }
 
     return $response;
@@ -172,6 +178,7 @@ class SignatureGeneratorForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
+    $form_state->setRebuild(TRUE);
     // Do nothing as this form does not actually process/store data.
   }
 }
