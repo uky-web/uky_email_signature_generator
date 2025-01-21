@@ -25,3 +25,4 @@ uky_email_signature_generator:
           More info/tech support: <a href="https://uky.service-now.com/techhelp?id=kb_article&amp;sysparm_article=KB0011268" target="_blank">How do I add an Email Signature in Microsoft Outlook?</a>
       </p>
   randomize_example: true
+  allow_download: true

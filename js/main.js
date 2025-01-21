@@ -53,4 +53,13 @@
       __setElementText(elem, config.button.failureText, config.button.textTimeout);
     });
   });
+
+  $('*[data-action="download-element"]').click(function(e) {
+    const target = $(this).data('target');
+    // Create element and initiate download
+    let el = document.createElement('a');
+    el.download = 'signature.html';
+    el.href = 'data:text/html;charset=utf-8,' + encodeURIComponent($(target).html());
+    el.click();
+  });
 })(jQuery, Drupal);

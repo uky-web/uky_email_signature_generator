@@ -26,6 +26,7 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
         'email' => 'john.smith@example.com',
         'form_instructions' => $config->get('uky_email_signature_generator.form_instructions'),
         'sig_instructions' => $config->get('uky_email_signature_generator.copy_instructions'),
+        'allow_download' => $config->get('uky_email_signature_generator.allow_download'),
       ],
     ],
     'signature_result' => [

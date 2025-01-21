@@ -21,3 +21,6 @@ uky_email_signature_generator:
           randomize_example:
             type: boolean
             label: 'Randomize example signature'
+          allow_download:
+            type: boolean
+            label: 'Allow signature HTML file downloads'

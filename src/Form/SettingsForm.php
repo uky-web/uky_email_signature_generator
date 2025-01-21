@@ -69,6 +69,13 @@ class SettingsForm extends ConfigFormBase {
       '#description' => t('Show a randomly-generated example signature on page load, instead of a static one.'),
     ];
 
+    $form['allow_download'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Allow signature file downloads'),
+      '#default_value' => $config->get('uky_email_signature_generator.allow_download'),
+      '#description' => t('Whether or not to display a button to download generated signatures as an HTML file.'),
+    ];
+
     return $form;
   }
 
@@ -91,6 +98,7 @@ class SettingsForm extends ConfigFormBase {
     $config->set('uky_email_signature_generator.form_instructions', $form_state->getValue('form_instructions'));
     $config->set('uky_email_signature_generator.copy_instructions', $form_state->getValue('copy_instructions'));
     $config->set('uky_email_signature_generator.randomize_example', $form_state->getValue('randomize_example'));
+    $config->set('uky_email_signature_generator.allow_download', $form_state->getValue('allow_download'));
     $config->save();
     parent::submitForm($form, $form_state);
   }
