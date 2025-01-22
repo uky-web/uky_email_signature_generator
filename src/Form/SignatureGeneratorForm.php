@@ -98,6 +98,9 @@ class SignatureGeneratorForm extends FormBase {
     $form['phone'] = [
       '#type' => 'tel',
       '#title' => $this->t('Phone'),
+      '#attributes' => [
+        'pattern' => '\d{3}-\d{3}-\d{4}',
+      ]
     ];
 
     $form['email'] = [
@@ -165,11 +168,30 @@ class SignatureGeneratorForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
+    // Check for required first and last name
     if (empty($form_state->getValue('first_name'))) {
       $form_state->setErrorByName('first_name');
     }
     if (empty($form_state->getValue('last_name'))) {
       $form_state->setErrorByName('last_name');
+    }
+
+    // Process/format phone number, or display error if incorrectly formatted
+    $phone = $form_state->getValue('phone');
+    if (!empty($phone)) {
+      // Strip out non-numeric characters
+      $phone = preg_replace('/\D/', '', $phone);
+      if (strlen($phone) === 11 && $phone[0] === '1') {
+        // Strip out USA country code
+        $phone = substr($phone, 1);
+      }
+      // Check length of resulting number
+      if (strlen($phone) !== 10) {
+        $form_state->setErrorByName('phone', $this->t('Phone must be a 10-digit US-based number.'));
+      } else {
+        // Update value with stripped-down number, will be re-formatted for display in the template
+        $form_state->setValue('phone', $phone);
+      }
     }
     parent::validateForm($form, $form_state);
   }

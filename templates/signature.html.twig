@@ -93,7 +93,7 @@
                   <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
                     <a href="tel:{{ phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
                       <span class="phone-number" style="border: none; color: #0033a0; text-decoration: none">
-                        {{ phone }}
+                        {{ phone | format_phone }}
                       </span>
                     </a>
                   </td>
@@ -130,7 +130,7 @@
   {% set lines = lines|merge([city, '']) %}
 {% endif %}
 {% if phone is not null and phone is not empty %}
-  {% set lines = lines|merge([phone]) %}
+  {% set lines = lines|merge([phone | format_phone]) %}
 {% endif %}
 {% if email is not null and email is not empty %}
   {% set lines = lines|merge([email]) %}
