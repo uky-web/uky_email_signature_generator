@@ -30,12 +30,12 @@
       <div id="directions" class="left">
         <button id="sig-copy-to-clipboard" class="button action-button" data-action="copy-element"
                 data-target="#result-html" data-target-text="#result-text">
-          Copy signature
+          {% trans %}Copy signature{% endtrans %}
         </button>
         {% if allow_download %}
           <button id="sig-download-file" class="button action-button" data-action="download-element"
                   data-target="#result-html">
-            Download HTML file
+            {% trans %}Download HTML file{% endtrans %}
           </button>
         {% endif %}
 
