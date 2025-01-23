@@ -2,7 +2,7 @@
 /**
  * Implements hook_theme().
  */
-function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
+function uky_email_signature_generator_theme($existing, $type, $theme, $path): array {
   $config = \Drupal::config('uky_email_signature_generator.settings');
 
   return [
@@ -47,36 +47,6 @@ function uky_email_signature_generator_theme($existing, $type, $theme, $path) {
         'phone' => NULL,
         'email' => NULL,
       ],
-    ]
+    ],
   ];
-}
-
-/**
- * Implements hook_menu().
- *
- * @see hook_menu()
- * @see menu_example
- */
-function uky_email_signature_generator_menu() {
-  // TODO evaluate use/need for this hook
-  $items['branding-tools/email-signature-generator'] = array(
-    'title' => 'Email Signature Generator',
-    'page callback' => 'page_email_signature_generator',
-    'access callback' => TRUE,
-    'expanded' => TRUE,
-  );
-
-  $items['branding-tools/email-signature-generator/code'] = array(
-    'type' => MENU_CALLBACK,
-    'access arguments' => array('access content'),
-    'delivery callback' => 'page_email_signature_generator_html',
-  );
-
-  $items['branding-tools/email-signature-generator/code-simplified'] = array(
-    'type' => MENU_CALLBACK,
-    'access arguments' => array('access content'),
-    'delivery callback' => 'page_email_signature_generator_html_simplified',
-  );
-
-  return $items;
 }

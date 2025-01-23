@@ -1,40 +1,44 @@
 /*******************************
          Element Styles
 *******************************/
+#signature-generator {
+  margin: auto;
 
-#result-column {
-  // Only show directions after signature generation
-  #directions {
-    display: none;
-  }
-  &.generated {
+  #result-column {
+    // Only show directions after signature generation
     #directions {
-      display: block;
+      display: none;
+    }
+    &.generated {
+      #directions {
+        display: block;
+      }
+    }
+
+    // Always hide plaintext signature
+    #result-text {
+      display: none;
+    }
+
+    #directions {
+      h2 {
+        font-size: 1.314rem;
+      }
+    }
+
+    // Offset scroll point for the preview to avoid scrolling behind the admin bar
+    .scroll-to {
+      position: absolute;
+      transform: translateY(-80px);
     }
   }
 
-  // Always hide plaintext signature
-  #result-text {
-    display: none;
+  button.action-button {
+    display: block;
+    width:100%;
+    text-align: center;
+    margin-block: 1.125rem;
   }
-
-  #directions {
-    h2 {
-      font-size: 1.314rem;
-    }
-  }
-
-  // Offset scroll point for the preview to avoid scrolling behind the admin bar
-  .scroll-to {
-    position: absolute;
-    transform: translateY(-80px);
-  }
-}
-
-button.action-button {
-  display: block;
-  width:100%;
-  text-align: center;
 }
 
 /*******************************

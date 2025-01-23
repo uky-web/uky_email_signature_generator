@@ -1,27 +1,30 @@
 /*******************************
          Element Styles
 *******************************/
-#result-column #directions {
+#signature-generator {
+  margin: auto;
+}
+#signature-generator #result-column #directions {
   display: none;
 }
-#result-column.generated #directions {
+#signature-generator #result-column.generated #directions {
   display: block;
 }
-#result-column #result-text {
+#signature-generator #result-column #result-text {
   display: none;
 }
-#result-column #directions h2 {
+#signature-generator #result-column #directions h2 {
   font-size: 1.314rem;
 }
-#result-column .scroll-to {
+#signature-generator #result-column .scroll-to {
   position: absolute;
   transform: translateY(-80px);
 }
-
-button.action-button {
+#signature-generator button.action-button {
   display: block;
   width: 100%;
   text-align: center;
+  margin-block: 1.125rem;
 }
 
 /*******************************
