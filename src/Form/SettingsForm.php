@@ -4,6 +4,8 @@ namespace Drupal\uky_email_signature_generator\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Module settings form.
@@ -74,6 +76,15 @@ class SettingsForm extends ConfigFormBase {
       '#title' => t('Allow signature file downloads'),
       '#default_value' => $config->get('uky_email_signature_generator.allow_download'),
       '#description' => t('Whether or not to display a button to download generated signatures as an HTML file.'),
+    ];
+
+    $form['page_link'] = [
+      '#type' => 'item',
+      '#markup' => Link::fromTextAndUrl(
+        $this->t('View Signature Generator'),
+        Url::fromRoute('uky_email_signature_generator.generator_form'))
+        ->toString(),
+      '#weight' => 100,
     ];
 
     return $form;
