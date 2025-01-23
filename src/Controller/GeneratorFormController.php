@@ -51,10 +51,9 @@ class GeneratorFormController extends ControllerBase {
       '#form' => $this->formBuilder->getForm(SignatureGeneratorForm::class),
       '#attached' => [
         'library' => [
-          'uky_email_signature_generator/semantic-ui',
-          'uky_email_signature_generator/uky-email-signature-generator',
           'core/drupal.ajax',
           'views/views.ajax',
+          'uky_email_signature_generator/uky-email-signature-generator',
         ]
       ],
     ];

@@ -6,12 +6,3 @@ uky-email-signature-generator:
     js/main.js: {}
   dependencies:
     - core/jquery
-
-semantic-ui:
-  css:
-    layout:
-      vendor/semantic/ui/dist/semantic.min.css: {}
-  js:
-    vendor/semantic/ui/dist/semantic.min.js: {}
-  dependencies:
-    - core/jquery

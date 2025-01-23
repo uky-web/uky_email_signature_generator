@@ -2,9 +2,6 @@
     "name": "uky-web/uky_email_signature_generator",
     "description": "A custom page that includes a client-side html email signature generator.",
     "type": "drupal-module",
-    "require": {
-        "semantic/ui": "^2.5"
-    },
     "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
