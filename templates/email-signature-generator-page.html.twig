@@ -1,52 +1,49 @@
-<div class="ui two wide column"></div>
-<div class="twelve wide column">
-  <div id="signature-generator" class="ui two column aligned stackable divided grid">
-    <div class="column">
-      <div id="#form-instructions">
-        {{ form_instructions.value | raw }}
-      </div>
-      {{ form }}
+<div id="signature-generator" class="ui two column aligned stackable divided grid">
+  <div class="column">
+    <div id="#form-instructions">
+      {{ form_instructions.value | raw }}
     </div>
-    <div id="result-column" class="column">
-      <div id="demo" class="left">
-        <span class="scroll-to">&nbsp;</span>
-        <span class="spacer">&nbsp;</span>
-        <div id="result-wrapper">
-          {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
-            'name': first_name ~ ' ' ~ last_name,
-            'creds': credentials,
-            'pronouns': pronouns,
-            'title': position_title,
-            'university': university,
-            'department': department_unit,
-            'sub_unit': sub_unit,
-            'address': address,
-            'city': city_state_zip,
-            'phone': phone,
-            'email': email,
-          }) }}
-        </div>
+    {{ form }}
+  </div>
+  <div id="result-column" class="column">
+    <div id="demo" class="left">
+      <span class="scroll-to">&nbsp;</span>
+      <span class="spacer">&nbsp;</span>
+      <div id="result-wrapper">
+        {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
+          'name': first_name ~ ' ' ~ last_name,
+          'creds': credentials,
+          'pronouns': pronouns,
+          'title': position_title,
+          'university': university,
+          'department': department_unit,
+          'sub_unit': sub_unit,
+          'address': address,
+          'city': city_state_zip,
+          'phone': phone,
+          'email': email,
+        }) }}
       </div>
-      <div id="directions" class="left">
-        <button id="sig-copy-to-clipboard" class="button action-button" data-action="copy-element"
-                data-target="#result-html" data-target-text="#result-text">
-          {% trans %}Copy signature{% endtrans %}
+    </div>
+    <div id="directions" class="left">
+      <button id="sig-copy-to-clipboard" class="button action-button" data-action="copy-element"
+              data-target="#result-html" data-target-text="#result-text">
+        {% trans %}Copy signature{% endtrans %}
+      </button>
+      {% if allow_download %}
+        <button id="sig-download-file" class="button action-button" data-action="download-element"
+                data-target="#result-html">
+          {% trans %}Download HTML file{% endtrans %}
         </button>
-        {% if allow_download %}
-          <button id="sig-download-file" class="button action-button" data-action="download-element"
-                  data-target="#result-html">
-            {% trans %}Download HTML file{% endtrans %}
-          </button>
-        {% endif %}
+      {% endif %}
 
-        <div id="email-signature-instructions">
-          <div class="content">
-            {{ sig_instructions.value | raw }}
-          </div>
+      <div id="email-signature-instructions">
+        <div class="content">
+          {{ sig_instructions.value | raw }}
         </div>
       </div>
-      <br>
     </div>
+    <br />
   </div>
 </div>
 <!--</div>-->

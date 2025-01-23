@@ -3,20 +3,43 @@
 *******************************/
 #signature-generator {
   margin: auto;
+  /* Layout */
 }
-#signature-generator #result-column #directions {
+#signature-generator.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0;
+}
+#signature-generator.grid .column {
+  width: 50%;
+  padding: 1rem;
+  position: relative;
+  display: inline-block;
+  box-shadow: -1px 0 0 0 rgba(34, 36, 38, 0.15);
+}
+#signature-generator.grid .column:first-child {
+  box-shadow: none;
+}
+#signature-generator.grid .column .form {
+  font-size: 1rem;
+  position: relative;
+  max-width: 100%;
+}
+#signature-generator.grid .column#result-column #directions {
   display: none;
 }
-#signature-generator #result-column.generated #directions {
+#signature-generator.grid .column#result-column.generated #directions {
   display: block;
 }
-#signature-generator #result-column #result-text {
+#signature-generator.grid .column#result-column #result-text {
   display: none;
 }
-#signature-generator #result-column #directions h2 {
+#signature-generator.grid .column#result-column #directions h2 {
   font-size: 1.314rem;
 }
-#signature-generator #result-column .scroll-to {
+#signature-generator.grid .column#result-column .scroll-to {
   position: absolute;
   transform: translateY(-80px);
 }
