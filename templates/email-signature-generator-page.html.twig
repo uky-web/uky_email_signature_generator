@@ -1,31 +1,29 @@
-<div id="signature-generator" class="ui two column aligned stackable divided grid">
+<div id="signature-generator" class="stackable divided grid">
   <div class="column">
-    <div id="#form-instructions">
+    <div id="form-instructions">
       {{ form_instructions.value | raw }}
     </div>
     {{ form }}
   </div>
   <div id="result-column" class="column">
-    <div id="demo" class="left">
-      <span class="scroll-to">&nbsp;</span>
-      <span class="spacer">&nbsp;</span>
-      <div id="result-wrapper">
-        {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
-          'name': first_name ~ ' ' ~ last_name,
-          'creds': credentials,
-          'pronouns': pronouns,
-          'title': position_title,
-          'university': university,
-          'department': department_unit,
-          'sub_unit': sub_unit,
-          'address': address,
-          'city': city_state_zip,
-          'phone': phone,
-          'email': email,
-        }) }}
-      </div>
+    <span class="scroll-to">&nbsp;</span>
+    <span class="spacer">&nbsp;</span>
+    <div id="result-wrapper">
+      {{ include('@uky_email_signature_generator/templates/signature.html.twig', {
+        'name': first_name ~ ' ' ~ last_name,
+        'creds': credentials,
+        'pronouns': pronouns,
+        'title': position_title,
+        'university': university,
+        'department': department_unit,
+        'sub_unit': sub_unit,
+        'address': address,
+        'city': city_state_zip,
+        'phone': phone,
+        'email': email,
+      }) }}
     </div>
-    <div id="directions" class="left">
+    <div id="directions">
       <button id="sig-copy-to-clipboard" class="button action-button" data-action="copy-element"
               data-target="#result-html" data-target-text="#result-text">
         {% trans %}Copy signature{% endtrans %}

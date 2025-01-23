@@ -1,0 +1,31 @@
+@use '_variables';
+
+@mixin breakpoint($breakpoint, $direction: min) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    $breakpoint: map-get(variables.$breakpoints, $breakpoint);
+
+    @if $direction == min {
+      @media only screen and (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media only screen and (max-width: $breakpoint - 1) {
+        @content;
+      }
+    }
+
+  } @else {
+
+    @if $direction == min {
+      @media only screen and (min-width: $breakpoint) {
+        @content;
+      }
+    }
+
+    @else {
+      @media only screen and (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}

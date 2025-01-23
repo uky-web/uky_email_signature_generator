@@ -1,3 +1,8 @@
+@use '_variables';
+@use '_mixins';
+
+$mobile-breakpoint: md;
+
 /*******************************
          Element Styles
 *******************************/
@@ -17,16 +22,17 @@
       padding: 1rem;
       position: relative;
       display: inline-block;
-      box-shadow: -1px 0 0 0 rgba(34,36,38,.15);
-
-      &:first-child {
-        box-shadow: none;
-      }
 
       .form {
         font-size: 1rem;
         position: relative;
         max-width: 100%;
+
+        form {
+          input {
+            width: 100%;
+          }
+        }
       }
 
       &#result-column {
@@ -34,6 +40,7 @@
         #directions {
           display: none;
         }
+
         &.generated {
           #directions {
             display: block;
@@ -58,11 +65,51 @@
         }
       }
     }
+
+    &.divided {
+      .column {
+        box-shadow: -1px 0 0 0 rgba(34, 36, 38, .15);
+
+        &:first-child {
+          box-shadow: none;
+        }
+      }
+    }
+
+    // Mobile styles
+    &.stackable {
+      @include mixins.breakpoint($mobile-breakpoint, max) {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .column {
+        @include mixins.breakpoint($mobile-breakpoint, max) {
+          padding: 2rem 0;
+          box-shadow: none;
+          width: 100%;
+          margin: 0;
+        }
+      }
+
+      &.divided {
+        .column {
+          @include mixins.breakpoint($mobile-breakpoint, max) {
+            border-top: 1px solid rgba(34, 36, 38, .15);
+
+            &:first-child {
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
   }
 
   button.action-button {
     display: block;
-    width:100%;
+    width: 100%;
     text-align: center;
     margin-block: 1.125rem;
   }
