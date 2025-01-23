@@ -26,6 +26,16 @@
 #signature-generator.grid .column .form form input {
   width: 100%;
 }
+#signature-generator.grid .column .form form input.error {
+  border: solid 2px #E33F1E;
+}
+#signature-generator.grid .column .form form div[data-drupal-messages] {
+  margin-bottom: 1rem;
+}
+#signature-generator.grid .column .form form div[data-drupal-messages] div[role=alert] {
+  color: #C12C2B;
+  font-weight: bolder;
+}
 #signature-generator.grid .column#result-column #directions {
   display: none;
 }

@@ -31,6 +31,19 @@ $mobile-breakpoint: md;
         form {
           input {
             width: 100%;
+
+            &.error {
+              border: solid 2px #E33F1E;
+            }
+          }
+
+          div[data-drupal-messages] {
+            margin-bottom: 1rem;
+
+            div[role="alert"] {
+              color: #C12C2B;
+              font-weight: bolder;
+            }
           }
         }
       }
