@@ -1,0 +1,59 @@
+/*******************************
+         Element Styles
+*******************************/
+
+#result-column {
+  // Only show directions after signature generation
+  #directions {
+    display: none;
+  }
+  &.generated {
+    #directions {
+      display: block;
+    }
+  }
+
+  // Always hide plaintext signature
+  #result-text {
+    display: none;
+  }
+
+  #directions {
+    h2 {
+      font-size: 1.314rem;
+    }
+  }
+
+  // Offset scroll point for the preview to avoid scrolling behind the admin bar
+  .scroll-to {
+    position: absolute;
+    transform: translateY(-80px);
+  }
+}
+
+button.action-button {
+  display: block;
+  width:100%;
+  text-align: center;
+}
+
+/*******************************
+          UI Overrides
+*******************************/
+
+a {
+  color: #009FDA;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #00BAFF;
+  }
+}
+
+p {
+  a {
+    font-weight: bold;
+  }
+}

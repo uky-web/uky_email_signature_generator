@@ -1,7 +1,7 @@
 uky-email-signature-generator:
   css:
     layout:
-      css/page.css: {}
+      css/page.min.css: {}
   js:
     js/main.js: {}
   dependencies:
