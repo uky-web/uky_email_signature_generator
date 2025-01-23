@@ -37,54 +37,47 @@
               <tbody>
                 <tr style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}</span>
-                  </td>
-                </tr>
-                <tr style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span id="pronouns" class="pronoun-span" style="color: #0033a0; font-style: italic">
-                      {{ pronouns }}
-                    </span>
+                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}</span><span id="pronouns" class="pronouns-span" style="color: #0033a0; font-size: 1.5em">{{ (pronouns is not null and pronouns is not empty) ? ' (' ~ pronouns ~ ')': '' }}</span>
                   </td>
                 </tr>
                 <tr id="title" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #0033a0">
+                    <span class="position-span" style="color: #000000; font-weight: bold;">
                       {{ title }}
                     </span>
                   </td>
                 </tr>
                 <tr id="org" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #0033a0">
+                    <span class="position-span" style="color: #000000">
                       {{ university }}
                     </span>
                   </td>
                 </tr>
                 <tr id="department" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #0033a0">
+                    <span class="position-span" style="color: #000000">
                       {{ department }}
                     </span>
                   </td>
                 </tr>
                 <tr id="department" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #0033a0">
+                    <span class="position-span" style="color: #000000">
                       {{ sub_unit }}
                     </span>
                   </td>
                 </tr>
                 <tr id="address" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #0033a0">
+                    <span class="position-span" style="color: #000000">
                       {{ address }}
                     </span>
                   </td>
                 </tr>
                 <tr id="city" style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #0033a0">
+                    <span class="position-span" style="color: #000000">
                       {{ city }}
                     </span>
                   </td>
@@ -115,10 +108,7 @@
   </body>
 </div>
 {% set lines = [] %}
-{% set lines = lines|merge([name ~ (creds is not null and creds is not empty ? ', ' ~ creds : '')]) %}
-{% if pronouns is not null and pronouns is not empty %}
-  {% set lines = lines|merge([pronouns]) %}
-{% endif %}
+{% set lines = lines|merge([name ~ (creds is not null and creds is not empty ? ', ' ~ creds : '') ~ (pronouns is not null and pronouns is not empty ? ' (' ~ pronouns ~ ')' : '')]) %}
 {% if (title is not null and title is not empty) or (university is not null and university is not empty) %}
   {% set lines = lines|merge([title ~ (title is not null and title is not empty ? ', ' : '') ~ university]) %}
 {% endif %}
