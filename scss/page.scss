@@ -1,8 +1,6 @@
 @use '_variables';
 @use '_mixins';
 
-$mobile-breakpoint: md;
-
 /*******************************
          Element Styles
 *******************************/
@@ -33,7 +31,7 @@ $mobile-breakpoint: md;
             width: 100%;
 
             &.error {
-              border: solid 2px #E33F1E;
+              border: solid 2px variables.$color-error;
             }
           }
 
@@ -41,7 +39,7 @@ $mobile-breakpoint: md;
             margin-bottom: 1rem;
 
             div[role="alert"] {
-              color: #C12C2B;
+              color: variables.$color-alert;
               font-weight: bolder;
             }
           }
@@ -101,14 +99,14 @@ $mobile-breakpoint: md;
 
     // Mobile styles
     &.stackable {
-      @include mixins.breakpoint($mobile-breakpoint, max) {
+      @include mixins.breakpoint(variables.$mobile-breakpoint, max) {
         width: auto;
         margin-left: 0;
         margin-right: 0;
       }
 
       .column {
-        @include mixins.breakpoint($mobile-breakpoint, max) {
+        @include mixins.breakpoint(variables.$mobile-breakpoint, max) {
           padding: 2rem 0;
           box-shadow: none;
           width: 100%;
@@ -118,7 +116,7 @@ $mobile-breakpoint: md;
 
       &.divided {
         .column {
-          @include mixins.breakpoint($mobile-breakpoint, max) {
+          @include mixins.breakpoint(variables.$mobile-breakpoint, max) {
             border-top: 1px solid rgba(34, 36, 38, .15);
 
             &:first-child {
@@ -135,26 +133,5 @@ $mobile-breakpoint: md;
     width: 100%;
     text-align: center;
     margin-block: 1.125rem;
-  }
-}
-
-/*******************************
-          UI Overrides
-*******************************/
-
-a {
-  color: #009FDA;
-  text-decoration: none;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #00BAFF;
-  }
-}
-
-p {
-  a {
-    font-weight: bold;
   }
 }

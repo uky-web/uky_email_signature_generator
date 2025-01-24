@@ -95,21 +95,4 @@
   margin-block: 1.125rem;
 }
 
-/*******************************
-          UI Overrides
-*******************************/
-a {
-  color: #009FDA;
-  text-decoration: none;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #00BAFF;
-}
-
-p a {
-  font-weight: bold;
-}
-
 /*# sourceMappingURL=page.css.map */
