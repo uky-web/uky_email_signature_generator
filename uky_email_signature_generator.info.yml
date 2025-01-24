@@ -1,0 +1,6 @@
+name: 'UKY Email Signature Generator'
+type: module
+description: 'A custom page that includes a client-side html email signature generator.'
+package: UKY
+core_version_requirement: ^10 || ^11
+configure: uky_email_signature_generator.settings_form

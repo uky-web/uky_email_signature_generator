@@ -1,0 +1,7 @@
+services:
+  uky_email_signature_generator.twig_extension:
+    class: Drupal\uky_email_signature_generator\TwigExtension\SignatureFormatter
+    tags:
+      - { name: twig.extension }
+    arguments:
+      - '@entity_type.manager'

@@ -1,0 +1,17 @@
+$breakpoints: (
+  sm: 320px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1920px,
+);
+
+$mobile-breakpoint: md;
+
+$colors: (
+  light-red: #E33F1E,
+  deep-red: #C12C2B,
+);
+
+$color-error: map-get($colors, light-red);
+$color-alert: map-get($colors, deep-red);

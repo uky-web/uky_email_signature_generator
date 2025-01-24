@@ -1,0 +1,26 @@
+uky_email_signature_generator:
+  settings:
+    type: config_object
+    label: 'Email Signature Generator settings'
+    mapping:
+      uky_email_signature_generator:
+        type: mapping
+        mapping:
+          page_title:
+            type: text
+            label: 'Page title'
+          university_name:
+            type: text
+            label: 'University name'
+          form_instructions:
+            type: text
+            label: 'Form instructions'
+          copy_instructions:
+            type: text
+            label: 'Signature copy instructions'
+          randomize_example:
+            type: boolean
+            label: 'Randomize example signature'
+          allow_download:
+            type: boolean
+            label: 'Allow signature HTML file downloads'

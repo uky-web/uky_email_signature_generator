@@ -1,0 +1,5 @@
+uky_email_signature_generator.settings:
+  title: 'Email Signature Generator'
+  description: 'Change global settings such as the university name and signature usage instructions.'
+  route_name: uky_email_signature_generator.settings_form
+  parent: system.admin_config_content

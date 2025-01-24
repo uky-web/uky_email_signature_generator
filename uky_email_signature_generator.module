@@ -1,0 +1,52 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function uky_email_signature_generator_theme($existing, $type, $theme, $path): array {
+  $config = \Drupal::config('uky_email_signature_generator.settings');
+
+  return [
+    'uky_email_signature_generator_form' => [
+      'path' => $path . '/templates',
+      'template' => 'email-signature-generator-page',
+      'variables' => [
+        'path' => \Drupal::service('extension.list.module')->getPath('uky_email_signature_generator'),
+        'form' => NULL,
+        'first_name' => 'John',
+        'last_name' => 'Smith',
+        'credentials' => 'Ph.D',
+        'pronouns' => 'he/him',
+        'position_title' => '',
+        'university' => $config->get('uky_email_signature_generator.university_name'),
+        'department_unit' => '',
+        'sub_unit' => '',
+        'address' => '123 Main St.',
+        'city_state_zip' => 'Lexington, KY 40506',
+        'phone' => '859.555.5555',
+        'email' => 'john.smith@example.com',
+        'form_instructions' => $config->get('uky_email_signature_generator.form_instructions'),
+        'sig_instructions' => $config->get('uky_email_signature_generator.copy_instructions'),
+        'allow_download' => $config->get('uky_email_signature_generator.allow_download'),
+      ],
+    ],
+    'signature_result' => [
+      'path' => $path . '/templates',
+      'template' => 'signature',
+      'variables' => [
+        'path' => \Drupal::service('extension.list.module')->getPath('uky_email_signature_generator'),
+        'form' => NULL,
+        'name' => NULL,
+        'creds' => NULL,
+        'pronouns' => NULL,
+        'title' => NULL,
+        'university' => NULL,
+        'department' => NULL,
+        'sub_unit' => NULL,
+        'address' => NULL,
+        'city' => NULL,
+        'phone' => NULL,
+        'email' => NULL,
+      ],
+    ],
+  ];
+}
