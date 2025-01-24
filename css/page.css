@@ -36,17 +36,24 @@
   color: #C12C2B;
   font-weight: bolder;
 }
-#signature-generator.grid .column#result-column #directions {
-  display: none;
+#signature-generator.grid .column#result-column #result-html {
+  overflow-x: visible;
 }
-#signature-generator.grid .column#result-column.generated #directions {
-  display: block;
+#signature-generator.grid .column#result-column #result-html table#sig img#top-logo {
+  width: 100px;
+  min-width: 100px;
 }
 #signature-generator.grid .column#result-column #result-text {
   display: none;
 }
+#signature-generator.grid .column#result-column #directions {
+  display: none;
+}
 #signature-generator.grid .column#result-column #directions h2 {
   font-size: 1.314rem;
+}
+#signature-generator.grid .column#result-column.generated #directions {
+  display: block;
 }
 #signature-generator.grid .column#result-column .scroll-to {
   position: absolute;

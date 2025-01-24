@@ -49,14 +49,15 @@ $mobile-breakpoint: md;
       }
 
       &#result-column {
-        // Only show directions after signature generation
-        #directions {
-          display: none;
-        }
+        // Style overrides for the preview that we don't want copied with the signature HTML
+        #result-html {
+          overflow-x: visible;
 
-        &.generated {
-          #directions {
-            display: block;
+          table#sig {
+            img#top-logo {
+              width: 100px;
+              min-width: 100px;
+            }
           }
         }
 
@@ -65,9 +66,18 @@ $mobile-breakpoint: md;
           display: none;
         }
 
+        // Only show directions after signature generation
         #directions {
+          display: none;
+
           h2 {
             font-size: 1.314rem;
+          }
+        }
+
+        &.generated {
+          #directions {
+            display: block;
           }
         }
 
