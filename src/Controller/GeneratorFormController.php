@@ -65,7 +65,6 @@ class GeneratorFormController extends ControllerBase {
         '#first_name' => $dummy_data['first_name'],
         '#last_name' => $dummy_data['last_name'],
         '#credentials' => $dummy_data['credentials'],
-        '#pronouns' => $dummy_data['pronouns'],
         '#position_title' => $dummy_data['position_title'],
         '#department_unit' => $dummy_data['department_unit'],
         '#email' => strtolower($dummy_data['first_name']) . '.' . strtolower($dummy_data['last_name']) . '@example.com',
@@ -90,13 +89,6 @@ class GeneratorFormController extends ControllerBase {
         '', '', '',
         'Ph.D', 'M.D.',
         'M.S.', 'M.A.',
-      ],
-      'pronouns' => [
-        '', '',
-        'he/him',    'she/her',
-        'they/them', 'ze/zir',
-        'he/they',   'she/they',
-        'they/he',   'they/she',
       ],
       'position_title' => [
         '',
