@@ -37,7 +37,7 @@
               <tbody>
                 <tr style="margin: 0; padding: 0">
                   <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}</span><span id="pronouns" class="pronouns-span" style="color: #0033a0; font-size: 1.5em">{{ (pronouns is not null and pronouns is not empty) ? ' (' ~ pronouns ~ ')': '' }}</span>
+                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}</span>
                   </td>
                 </tr>
                 <tr id="title" style="margin: 0; padding: 0">
@@ -108,7 +108,7 @@
   </body>
 </div>
 {% set lines = [] %}
-{% set lines = lines|merge([name ~ (creds is not null and creds is not empty ? ', ' ~ creds : '') ~ (pronouns is not null and pronouns is not empty ? ' (' ~ pronouns ~ ')' : '')]) %}
+{% set lines = lines|merge([name ~ (creds is not null and creds is not empty ? ', ' ~ creds : '')]) %}
 {% if (title is not null and title is not empty) or (university is not null and university is not empty) %}
   {% set lines = lines|merge([title ~ (title is not null and title is not empty ? ', ' : '') ~ university]) %}
 {% endif %}

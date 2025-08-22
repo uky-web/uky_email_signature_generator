@@ -65,11 +65,6 @@ class SignatureGeneratorForm extends FormBase {
       '#title' => $this->t('Credentials'),
     ];
 
-    $form['pronouns'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Pronouns'),
-    ];
-
     $form['position_title'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Position/Title'),
@@ -132,7 +127,6 @@ class SignatureGeneratorForm extends FormBase {
       '#theme' => 'signature_result',
       '#name' => implode(' ', [$form_values['first_name'], $form_values['last_name']]),
       '#creds' => $form_values['credentials'],
-      '#pronouns' => $form_values['pronouns'],
       '#title' => $form_values['position_title'],
       '#university' => $config->get('uky_email_signature_generator.university_name'),
       '#department' => $form_values['department_unit'],
