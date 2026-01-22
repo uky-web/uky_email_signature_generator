@@ -24,86 +24,60 @@
   </head>
   <body>
   <div>
-    <table id="sig" cellspacing="0" cellpadding="0" border-spacing="0" style="margin: 0; padding: 0">
-      <tbody>
-        <tr style="margin: 0; padding: 0">
-          <td width="110" class="top-td logo-td1" style="margin: 0; padding-right: 10px; vertical-align: top; width: 100px">
-            <img id="top-logo" border="0" width="100" height="71" alt="Logo"
-                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABHCAYAAADx2uLMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGNUQyMzMwMjExN0IxMUU3OTAyNkIzNUMyOEU2RDMzQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGNUQyMzMwMzExN0IxMUU3OTAyNkIzNUMyOEU2RDMzQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkRGQjUzN0ZGMTE3OTExRTc5MDI2QjM1QzI4RTZEMzNBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkRGQjUzODAwMTE3OTExRTc5MDI2QjM1QzI4RTZEMzNBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+vjgYTQAACe9JREFUeNrsXQls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">
-          </td>
-          <td valign="top" class="right-top-td"
-              style="border-left: 1px solid #0033a0; line-height: 1.3em; margin: 0; padding: 0 20px">
-            <table id="sig2" cellspacing="0" cellpadding="0" border-spacing="0" class="right-table" style="-webkit-text-size-adjust: none; border: none; border-collapse: collapse; color: #0033a0; font-family: georgia,times,serif; font-size: 14px; margin: 0; padding: 0; text-decoration: none">
-              <tbody>
-                <tr style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="name-span" style="color: #0033a0; font-size: 1.6em">{{ name }}</span><span id="creds" class="cred-span" style="color: #0033a0; font-size: 1.5em">{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}</span>
-                  </td>
-                </tr>
-                <tr id="title" style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #000000; font-weight: bold;">
-                      {{ title }}
-                    </span>
-                  </td>
-                </tr>
-                <tr id="org" style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #000000">
-                      {{ university }}
-                    </span>
-                  </td>
-                </tr>
-                <tr id="department" style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #000000">
-                      {{ department }}
-                    </span>
-                  </td>
-                </tr>
-                <tr id="department" style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #000000">
-                      {{ sub_unit }}
-                    </span>
-                  </td>
-                </tr>
-                <tr id="address" style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #000000">
-                      {{ address }}
-                    </span>
-                  </td>
-                </tr>
-                <tr id="city" style="margin: 0; padding: 0">
-                  <td class="inner-td font" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap">
-                    <span class="position-span" style="color: #000000">
-                      {{ city }}
-                    </span>
-                  </td>
-                </tr>
-                <tr class="color-tr" id="phone" style="color: #b0a49b; margin: 0; padding: 0">
-                  <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
-                    <a href="tel:{{ phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
-                      <span class="phone-number" style="border: none; color: #0033a0; text-decoration: none">
-                        {{ phone | format_phone }}
-                      </span>
-                    </a>
-                  </td>
-                </tr>
-                <tr class="color-tr" id="email" style="color: #b0a49b; margin: 0; padding: 0">
-                  <td class="inner-td" style="margin: 0; padding: 0; white-space: nowrap">
-                    <a href="mailto:{{ email }}" target="_blank" class="no-dec web-link" style="border: none; color: #0033a0; text-decoration: none">
-                      {{ email }}
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    -- <br />
+    {% if name is not null and name is not empty %}
+      <span class="name-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #0033a0; font-size: 1.6em">
+        {{ name }}{{ (creds is not null and creds is not empty) ? ', ' ~ creds : '' }}
+      </span><br />
+    {% endif %}
+    {% if title is not null and title is not empty %}
+      <span class="position-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #000000; font-weight: bold;">
+        {{ title }}
+      </span><br />
+    {% endif %}
+    {% if university is not null and university is not empty %}
+      <span class="university-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #000000">
+        {{ university }}
+      </span><br />
+    {% endif %}
+    {% if department is not null and department is not empty %}
+      <span class="department-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #000000">
+        {{ department }}
+      </span><br />
+    {% endif %}
+    {% if sub_unit is not null and sub_unit is not empty %}
+      <span class="unit-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #000000">
+        {{ sub_unit }}
+      </span><br />
+    {% endif %}
+    {% if address is not null and address is not empty %}
+      <span class="address-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #000000">
+        {{ address }}
+      </span><br />
+    {% endif %}
+    {% if city is not null and city is not empty %}
+      <span class="city-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; color: #000000">
+        {{ city }}
+      </span><br />
+    {% endif %}
+    {% if phone is not null and phone is not empty %}
+      <a href="tel:{{ phone }}" target="_blank" class="no-dec" style="border: none; text-decoration: none">
+        <span class="phone-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; border: none; color: #0033a0; text-decoration: none">
+          {{ phone | format_phone }}
+        </span>
+      </a><br />
+    {% endif %}
+    {% if email is not null and email is not empty %}
+      <a href="mailto:{{ email }}" target="_blank" class="no-dec web-link">
+        <span class="email-span" style="font-family: georgia,times,serif; margin: 0; padding: 0; white-space: nowrap; border: none; color: #0033a0; text-decoration: none">
+          {{ email }}
+        </span>
+      </a><br />
+    {% endif %}
+    <a href="https://uky.edu/" target="_blank">
+      <img id="bottom-logo" width="250" height="98" style="width:250px; height: 98px;" alt="Univeristy of Kentucky logo"
+           src="data:image/png;base64,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" />
+    </a>
   </div>
   </body>
 </div>
@@ -126,6 +100,6 @@
   {% set lines = lines|merge([email]) %}
 {% endif %}
 <div id="result-text">
---
+-- 
 {{ lines|join("\n") }}
 </div>
